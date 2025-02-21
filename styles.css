@@ -91,7 +91,7 @@ header {
 .subtitle {
     font-size: 1.3rem;
     margin-top: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     color: var(--neon-blue);
     font-family: var(--font-display);
     letter-spacing: 2px;
@@ -422,12 +422,13 @@ h1, h2, h3 {
     width: 100vw;
     height: 100vh;
     flex-shrink: 0;
-    overflow-y: auto;
+    overflow-y: scroll;
     padding: 2rem;
     opacity: 1;
     transition: opacity 0.5s ease;
     position: relative;
     padding-top: 20rem;
+    -webkit-overflow-scrolling: touch;
 }
 
 .section:not(#about) {
@@ -571,4 +572,19 @@ h1, h2, h3 {
 /* Add this new class for scroll-based animation */
 .header-scroll-hidden {
     transform: translateY(-100%);
+}
+
+/* Optional: Hide scrollbar but keep functionality */
+.section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.section::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.section::-webkit-scrollbar-thumb {
+    background: var(--neon-blue);
+    border-radius: 4px;
 } 
