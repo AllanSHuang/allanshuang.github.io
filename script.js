@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('nav a');
+    const header = document.querySelector('header');
     let currentIndex = 0;
     
     navLinks.forEach(link => {
@@ -36,6 +37,15 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSection.classList.add('fade-out');
             targetSection.classList.add(isMovingRight ? 'slide-in-right' : 'slide-in-left');
             
+            // Animate header based on target section
+            if (targetId === 'about') {
+                header.classList.remove('header-hidden');
+                header.classList.add('header-visible');
+            } else {
+                header.classList.remove('header-visible');
+                header.classList.add('header-hidden');
+            }
+            
             // Slide to target section
             document.querySelector('.sections-container').style.transform = 
                 `translateX(-${targetIndex * 100}vw)`;
@@ -45,7 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Set initial active state
+    // Set initial active states
     sections[0].classList.add('active');
     navLinks[0].classList.add('active');
+    header.classList.add('header-visible');
 }); 

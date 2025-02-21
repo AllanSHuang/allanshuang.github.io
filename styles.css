@@ -41,6 +41,11 @@ body {
 header {
     padding: 4rem 2rem;
     text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
 }
 
 .glitch-container {
@@ -312,6 +317,11 @@ h1, h2, h3 {
     opacity: 1;
     transition: opacity 0.5s ease;
     position: relative;
+    padding-top: 12rem; /* Increased to account for header height */
+}
+
+.section:not(#about) {
+    padding-top: 4rem;
 }
 
 .section.active {
@@ -359,4 +369,13 @@ h1, h2, h3 {
     to {
         opacity: 0;
     }
+}
+
+/* Add new classes for header animations */
+.header-hidden {
+    transform: translateY(-150%);
+}
+
+.header-visible {
+    transform: translateY(0);
 } 
