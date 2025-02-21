@@ -527,4 +527,13 @@ h1, h2, h3 {
 .skills-visible .skill-category li:nth-child(5) { animation-delay: 0.5s; }
 .skills-visible .skill-category li:nth-child(6) { animation-delay: 0.6s; }
 .skills-visible .skill-category li:nth-child(7) { animation-delay: 0.7s; }
-.skills-visible .skill-category li:nth-child(8) { animation-delay: 0.8s; } 
+.skills-visible .skill-category li:nth-child(8) { animation-delay: 0.8s; }
+
+.subsection-title {
+    margin-top: 3rem;
+    color: var(--neon-blue);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(45, 226, 230, 0.3);
+} 
