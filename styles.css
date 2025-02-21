@@ -30,7 +30,7 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        linear-gradient(0deg, rgba(10,10,22,0.7), rgba(10,10,22,0.7)),
+        linear-gradient(0deg, rgba(10,10,22,0.4), rgba(10,10,22,0.4)),
         url('./momo.png');
     background-size: cover;
     background-position: center;
@@ -45,12 +45,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 2;
-    background: linear-gradient(to bottom, 
-        rgba(10,10,22,0.8) 0%,
-        rgba(10,10,22,0.4) 80%,
-        rgba(10,10,22,0) 100%
-    );
-    padding-bottom: 3rem;
+    background: var(--dark-bg);
 }
 
 .glitch-container {
@@ -387,8 +382,8 @@ h1, h2, h3 {
     margin: 2rem 0;
     line-height: 1.9;
     font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .about-text strong {
@@ -432,11 +427,11 @@ h1, h2, h3 {
     opacity: 1;
     transition: opacity 0.5s ease;
     position: relative;
-    padding-top: 16rem; /* Increase this value to add more space below the header */
+    padding-top: 20rem;
 }
 
 .section:not(#about) {
-    padding-top: 4rem;
+    padding-top: 6rem;
 }
 
 .section.active {
