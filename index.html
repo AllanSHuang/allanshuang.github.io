@@ -27,134 +27,136 @@
         </ul>
     </nav>
 
-    <main>
-        <section id="about" class="neo-section">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <p class="about-text">
-                    Hello, I'm Allan—a recent Master of Computer Science graduate from the University of Urbana-Champaign (UIUC), where I also earned my B.S. in Statistics & Computer Science. My background spans software engineering, data analytics, and AI algorithms, and I have a deep passion for cloud technologies and artificial intelligence. I excel at analyzing data and crafting comprehensive visualizations using machine learning techniques, and I'm currently seeking co-op or full-time software engineering opportunities.
-                </p>
-                <p class="about-text">
-                    I view life much like software engineering—a continuous journey of discovering new features that drive improvement. Outside of coding, I stay active by playing basketball, and badminton, and hitting the gym. I also have diverse interests, including watching Japanese animated series, studying combustion engine cars, and experimenting with new recipes (I won first place in the UIUC CSSA cooking competition in Fall 2024!). Additionally, I'm a fan of Triple-A games like Dark Souls and The Witcher series, as well as free-to-play competitive titles such as Zenless Zone Zero, where strategic resource management and patience are key.
-                </p>
-                <p class="about-text highlight-text">
-                    Please see my resume for more details.
-                </p>
-            </div>
-        </section>
-
-        <section id="skills" class="neo-section">
-            <h2>Technical Arsenal</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Programming</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>Java</li>
-                        <li>C++</li>
-                        <li>R</li>
-                        <li>MySQL</li>
-                        <li>CSS</li>
-                        <li>HTML</li>
-                    </ul>
+    <div class="page-container">
+        <div class="sections-container">
+            <section id="about" class="section active">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p class="about-text">
+                        Hello, I'm Allan—a recent Master of Computer Science graduate from the University of Urbana-Champaign (UIUC), where I also earned my B.S. in Statistics & Computer Science. My background spans software engineering, data analytics, and AI algorithms, and I have a deep passion for cloud technologies and artificial intelligence. I excel at analyzing data and crafting comprehensive visualizations using machine learning techniques, and I'm currently seeking co-op or full-time software engineering opportunities.
+                    </p>
+                    <p class="about-text">
+                        I view life much like software engineering—a continuous journey of discovering new features that drive improvement. Outside of coding, I stay active by playing basketball, and badminton, and hitting the gym. I also have diverse interests, including watching Japanese animated series, studying combustion engine cars, and experimenting with new recipes (I won first place in the UIUC CSSA cooking competition in Fall 2024!). Additionally, I'm a fan of Triple-A games like Dark Souls and The Witcher series, as well as free-to-play competitive titles such as Zenless Zone Zero, where strategic resource management and patience are key.
+                    </p>
+                    <p class="about-text highlight-text">
+                        Please see my resume for more details.
+                    </p>
                 </div>
-                <div class="skill-category">
-                    <h3>Tech Stack</h3>
-                    <ul>
-                        <li>Docker</li>
-                        <li>Tableau</li>
-                        <li>Flask</li>
-                        <li>Git</li>
-                        <li>Jira</li>
-                        <li>AWS (S3, Lambda)</li>
-                        <li>Azure DevOps</li>
-                        <li>CI/CD Pipeline</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Office & Collaboration</h3>
-                    <ul>
-                        <li>MS Excel</li>
-                        <li>PowerPoint</li>
-                        <li>Google Cloud Platform</li>
-                        <li>Clipchamp</li>
-                        <li>MS Project</li>
-                        <li>Rally</li>
-                        <li>Confluence</li>
-                        <li>SharePoint</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Professional Skills</h3>
-                    <ul>
-                        <li>Natural Presenter</li>
-                        <li>Agile/Lean Waterfall</li>
-                        <li>Strong Management</li>
-                        <li>English (Native)</li>
-                        <li>Chinese Mandarin (Native)</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="neo-section">
-            <h2>Battle Records</h2>
-            <div class="experience-card">
-                <h3>Motorola Solutions <span class="company-type">(Global Security / Infrastructure Solution Provider)</span></h3>
-                <p class="role">Software Engineer Intern (Automation/Cloud Infrastructure Engineering), Chicago</p>
-                <p class="date">May 2022 – August 2022</p>
-                <p class="highlight">• Worked with senior SW developers to build services in Python, using the REST architecture and processed spreadsheet data with Google Spreadsheet API. Configured 2 critical YAML pipelines in Azure DevOps to run the system, triggered by a Cron job. Constructed a webhook to notify developers automatically through Google Chat when customer information is validated, received excellent feedback from the client.</p>
-                <p class="highlight">• Led the Cirrus team to design and implement an efficient system to automate the onboarding process for 2000+ new customers into the cloud services. Added additional utility functions for QoL and improved efficiency for the overall process. Got high recognition from executives and stakeholders.</p>
-            </div>
+            </section>
             
-            <div class="experience-card">
-                <h3>Jo Young Electronics <span class="company-type">(AI, IoT Solution Start Up Company)</span></h3>
-                <p class="role">Software Engineer Intern, Remote</p>
-                <p class="date">May 2021 – August 2021</p>
-                <p class="highlight">• Created Python and R scripts to predict the price of new/used vehicles via machine learning methods. Trained and evaluated 50+ multivariate linear regression models and generalized linear models to predict the target variable.</p>
-                <p class="highlight">• Cleaned and prepared training data from 200k+ cars from 326 different cities. Tuned and investigated model parameters to determine features (operating systems, connectivity, etc.) crucial in predicting price, giving insights to which components should have priority in manufacturing.</p>
-            </div>
-
-            <div class="experience-card">
-                <h3>From The Future <span class="company-type">(AI driven SEO / Data Analytics)</span></h3>
-                <p class="role">Data Engineer Intern, Philadelphia</p>
-                <p class="date">June 2018 – July 2018</p>
-                <p class="highlight">• Developed a Python script to clean 2 million rows of text data (YouTube channel data) with Pandas, reducing the previously manual workflow time from 7 hours to 2 minutes.</p>
-                <p class="highlight">• Utilized Presto for efficient SQL queries and aggregation operations for pre-processing before further manipulation with Pandas.</p>
-            </div>
-        </section>
-
-        <section id="projects" class="neo-section">
-            <h2>Featured Missions</h2>
-            <div class="project-card">
-                <h3>DashX</h3>
-                <p>AI-powered analytics platform analyzing 3M+ tweets</p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>NLTK</span>
-                    <span>matplotlib</span>
+            <section id="skills" class="section">
+                <h2>Technical Arsenal</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>C++</li>
+                            <li>R</li>
+                            <li>MySQL</li>
+                            <li>CSS</li>
+                            <li>HTML</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tech Stack</h3>
+                        <ul>
+                            <li>Docker</li>
+                            <li>Tableau</li>
+                            <li>Flask</li>
+                            <li>Git</li>
+                            <li>Jira</li>
+                            <li>AWS (S3, Lambda)</li>
+                            <li>Azure DevOps</li>
+                            <li>CI/CD Pipeline</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Office & Collaboration</h3>
+                        <ul>
+                            <li>MS Excel</li>
+                            <li>PowerPoint</li>
+                            <li>Google Cloud Platform</li>
+                            <li>Clipchamp</li>
+                            <li>MS Project</li>
+                            <li>Rally</li>
+                            <li>Confluence</li>
+                            <li>SharePoint</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Professional Skills</h3>
+                        <ul>
+                            <li>Natural Presenter</li>
+                            <li>Agile/Lean Waterfall</li>
+                            <li>Strong Management</li>
+                            <li>English (Native)</li>
+                            <li>Chinese Mandarin (Native)</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-
-            <div class="project-card">
-                <h3>Adapticam</h3>
-                <p>AI security system with 97.14% detection accuracy</p>
-                <div class="tech-stack">
-                    <span>CNN</span>
-                    <span>Computer Vision</span>
-                    <span>Python</span>
+            </section>
+            
+            <section id="experience" class="section">
+                <h2>Battle Records</h2>
+                <div class="experience-card">
+                    <h3>Motorola Solutions <span class="company-type">(Global Security / Infrastructure Solution Provider)</span></h3>
+                    <p class="role">Software Engineer Intern (Automation/Cloud Infrastructure Engineering), Chicago</p>
+                    <p class="date">May 2022 – August 2022</p>
+                    <p class="highlight">• Worked with senior SW developers to build services in Python, using the REST architecture and processed spreadsheet data with Google Spreadsheet API. Configured 2 critical YAML pipelines in Azure DevOps to run the system, triggered by a Cron job. Constructed a webhook to notify developers automatically through Google Chat when customer information is validated, received excellent feedback from the client.</p>
+                    <p class="highlight">• Led the Cirrus team to design and implement an efficient system to automate the onboarding process for 2000+ new customers into the cloud services. Added additional utility functions for QoL and improved efficiency for the overall process. Got high recognition from executives and stakeholders.</p>
                 </div>
-            </div>
-        </section>
+                
+                <div class="experience-card">
+                    <h3>Jo Young Electronics <span class="company-type">(AI, IoT Solution Start Up Company)</span></h3>
+                    <p class="role">Software Engineer Intern, Remote</p>
+                    <p class="date">May 2021 – August 2021</p>
+                    <p class="highlight">• Created Python and R scripts to predict the price of new/used vehicles via machine learning methods. Trained and evaluated 50+ multivariate linear regression models and generalized linear models to predict the target variable.</p>
+                    <p class="highlight">• Cleaned and prepared training data from 200k+ cars from 326 different cities. Tuned and investigated model parameters to determine features (operating systems, connectivity, etc.) crucial in predicting price, giving insights to which components should have priority in manufacturing.</p>
+                </div>
 
-        <section id="contact" class="neo-section">
-            <h2>Transmission Channel</h2>
-            <div class="contact-info">
-                <p>📧 allanshuang@gmail.com</p>
-                <p>🔗 linkedin.com/in/allanshuang</p>
-                <p>📱 650-681-2688</p>
-            </div>
-        </section>
-    </main>
+                <div class="experience-card">
+                    <h3>From The Future <span class="company-type">(AI driven SEO / Data Analytics)</span></h3>
+                    <p class="role">Data Engineer Intern, Philadelphia</p>
+                    <p class="date">June 2018 – July 2018</p>
+                    <p class="highlight">• Developed a Python script to clean 2 million rows of text data (YouTube channel data) with Pandas, reducing the previously manual workflow time from 7 hours to 2 minutes.</p>
+                    <p class="highlight">• Utilized Presto for efficient SQL queries and aggregation operations for pre-processing before further manipulation with Pandas.</p>
+                </div>
+            </section>
+            
+            <section id="projects" class="section">
+                <h2>Featured Missions</h2>
+                <div class="project-card">
+                    <h3>DashX</h3>
+                    <p>AI-powered analytics platform analyzing 3M+ tweets</p>
+                    <div class="tech-stack">
+                        <span>Python</span>
+                        <span>NLTK</span>
+                        <span>matplotlib</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Adapticam</h3>
+                    <p>AI security system with 97.14% detection accuracy</p>
+                    <div class="tech-stack">
+                        <span>CNN</span>
+                        <span>Computer Vision</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="contact" class="section">
+                <h2>Transmission Channel</h2>
+                <div class="contact-info">
+                    <p>📧 allanshuang@gmail.com</p>
+                    <p>🔗 linkedin.com/in/allanshuang</p>
+                    <p>📱 650-681-2688</p>
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
 </html> 

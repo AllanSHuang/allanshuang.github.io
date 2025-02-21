@@ -95,9 +95,10 @@ nav {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     padding: 1rem;
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 100;
+    width: 100%;
+    z-index: 1000;
     font-family: var(--font-display);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -119,6 +120,10 @@ nav a {
 
 nav a:hover {
     color: var(--neon-blue);
+}
+
+nav a.active {
+    color: var(--neon-pink);
 }
 
 main {
@@ -281,4 +286,26 @@ h1, h2, h3 {
     font-family: var(--font-display);
     font-weight: 500;
     letter-spacing: 1px;
+}
+
+.page-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.sections-container {
+    display: flex;
+    width: 500%; /* 100% for each section */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    overflow-y: auto;
+    padding: 2rem;
 } 
