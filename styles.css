@@ -4,6 +4,9 @@
     --neon-pink: #ff3864;
     --dark-bg: #0a0a16;
     --cyber-gradient: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Chakra Petch', sans-serif;
+    --font-accent: 'Russo One', sans-serif;
 }
 
 * {
@@ -15,7 +18,7 @@
 body {
     background-color: var(--dark-bg);
     color: #ffffff;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -53,6 +56,8 @@ header {
     text-shadow: 0.05em 0 0 var(--neon-pink),
                  -0.05em -0.025em 0 var(--neon-blue);
     animation: glitch 725ms infinite;
+    font-family: var(--font-accent);
+    letter-spacing: 4px;
 }
 
 @keyframes glitch {
@@ -82,6 +87,8 @@ header {
     font-size: 1.2rem;
     margin-top: 1rem;
     color: rgba(255, 255, 255, 0.9);
+    font-family: var(--font-display);
+    letter-spacing: 1px;
 }
 
 nav {
@@ -91,6 +98,9 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 nav ul {
@@ -145,6 +155,8 @@ main {
     margin-bottom: 1rem;
     font-size: 1.1rem;
     white-space: nowrap;
+    font-family: var(--font-display);
+    letter-spacing: 1px;
 }
 
 .skill-category ul {
@@ -178,6 +190,10 @@ main {
     transform: translateY(-5px);
 }
 
+.experience-card h3 {
+    letter-spacing: 1px;
+}
+
 .tech-stack {
     display: flex;
     gap: 0.5rem;
@@ -190,6 +206,8 @@ main {
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.9rem;
+    font-family: var(--font-display);
+    letter-spacing: 0.5px;
 }
 
 .contact-info {
@@ -210,6 +228,8 @@ main {
     color: var(--neon-pink);
     margin-bottom: 1rem;
     font-size: 0.9em;
+    font-family: var(--font-display);
+    letter-spacing: 1px;
 }
 
 .highlight {
@@ -221,6 +241,11 @@ main {
     color: rgba(255, 255, 255, 0.9);
     margin: 0.5rem 0;
     font-weight: 500;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: 2px;
 }
 
 @media (max-width: 768px) {
@@ -236,4 +261,24 @@ main {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.about-text {
+    margin: 1.5rem 0;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.highlight-text {
+    color: var(--neon-pink);
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 1px;
 } 
