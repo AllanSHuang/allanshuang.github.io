@@ -38,8 +38,6 @@ body {
 header {
     padding: 4rem 2rem;
     text-align: center;
-    background: var(--cyber-gradient);
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
 }
 
 .glitch-container {
