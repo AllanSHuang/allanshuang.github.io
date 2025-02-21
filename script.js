@@ -59,4 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
     sections[0].classList.add('active');
     navLinks[0].classList.add('active');
     header.classList.add('header-visible');
+
+    // Add More button functionality
+    document.querySelectorAll('.more-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const details = button.previousElementSibling;
+            const isExpanded = details.classList.contains('expanded');
+            
+            details.classList.toggle('expanded');
+            details.classList.toggle('visible');
+            button.textContent = isExpanded ? 'More' : 'Less';
+            button.classList.toggle('active');
+        });
+    });
 }); 
