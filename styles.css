@@ -168,16 +168,26 @@ main {
     background: rgba(255, 255, 255, 0.05);
     padding: 1.5rem;
     border-radius: 10px;
-    height: 100%;  /* Make all categories same height */
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(45, 226, 230, 0.2);
+    border-color: var(--neon-blue);
 }
 
 .skill-category h3 {
     color: var(--neon-blue);
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
     white-space: nowrap;
     font-family: var(--font-display);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(45, 226, 230, 0.5);
 }
 
 .skill-category ul {
@@ -185,10 +195,16 @@ main {
 }
 
 .skill-category li {
-    margin: 0.5rem 0;
-    padding-left: 1rem;
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
     position: relative;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.skill-category li:hover {
+    color: var(--neon-pink);
+    transform: translateX(10px);
 }
 
 .skill-category li::before {
@@ -196,7 +212,34 @@ main {
     position: absolute;
     left: 0;
     color: var(--neon-pink);
+    transition: transform 0.2s ease;
 }
+
+.skill-category li:hover::before {
+    transform: translateX(5px);
+}
+
+/* Add a subtle animation for the skills grid */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-category {
+    animation: fadeInUp 0.6s ease backwards;
+}
+
+/* Stagger the animation for each category */
+.skill-category:nth-child(1) { animation-delay: 0.1s; }
+.skill-category:nth-child(2) { animation-delay: 0.2s; }
+.skill-category:nth-child(3) { animation-delay: 0.3s; }
+.skill-category:nth-child(4) { animation-delay: 0.4s; }
 
 .experience-card, .project-card {
     background: rgba(255, 255, 255, 0.05);
