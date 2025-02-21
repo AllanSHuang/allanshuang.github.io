@@ -8,51 +8,101 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             
-            // Remove active class from all links
-            navLinks.forEach(l => l.classList.remove('active'));
-            // Add active class to clicked link
-            e.target.classList.add('active');
-            
-            // Get the target section
             const targetId = e.target.getAttribute('href').substring(1);
-            const targetIndex = Array.from(sections).findIndex(
-                section => section.id === targetId
-            );
             
-            if (targetIndex === currentIndex) return;
-            
-            // Determine direction of transition
-            const isMovingRight = targetIndex > currentIndex;
-            
-            // Get current and target sections
-            const currentSection = sections[currentIndex];
-            const targetSection = sections[targetIndex];
-            
-            // Remove previous animation classes
-            sections.forEach(section => {
-                section.classList.remove('slide-in-right', 'slide-in-left', 'fade-out');
-            });
-            
-            // Add animations
-            currentSection.classList.add('fade-out');
-            targetSection.classList.add(isMovingRight ? 'slide-in-right' : 'slide-in-left');
-            
-            // Modify header animation for section changes
-            if (targetId === 'about') {
-                header.classList.remove('header-hidden');
-                header.classList.add('header-visible');
-                header.classList.remove('header-scroll-hidden'); // Reset scroll state
+            // Reset About section when leaving it
+            if (currentIndex === 0 && targetId !== 'about') {
+                // Reset scroll position
+                const aboutSection = document.getElementById('about');
+                aboutSection.scrollTop = 0;
+                
+                // Reset header position
+                const header = document.querySelector('header');
+                header.classList.remove('header-scroll-hidden');
+                
+                // Optional: wait for scroll reset before transition
+                setTimeout(() => {
+                    // Your existing navigation code
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    e.target.classList.add('active');
+                    
+                    const targetIndex = Array.from(sections).findIndex(
+                        section => section.id === targetId
+                    );
+                    
+                    if (targetIndex === currentIndex) return;
+                    
+                    const isMovingRight = targetIndex > currentIndex;
+                    const currentSection = sections[currentIndex];
+                    const targetSection = sections[targetIndex];
+                    
+                    sections.forEach(section => {
+                        section.classList.remove('slide-in-right', 'slide-in-left', 'fade-out');
+                    });
+                    
+                    currentSection.classList.add('fade-out');
+                    targetSection.classList.add(isMovingRight ? 'slide-in-right' : 'slide-in-left');
+                    
+                    if (targetId === 'about') {
+                        header.classList.remove('header-hidden');
+                        header.classList.add('header-visible');
+                    } else {
+                        header.classList.remove('header-visible');
+                        header.classList.add('header-hidden');
+                    }
+                    
+                    document.querySelector('.sections-container').style.transform = 
+                        `translateX(-${targetIndex * 100}vw)`;
+                    
+                    currentIndex = targetIndex;
+                }, 100);
             } else {
-                header.classList.remove('header-visible');
-                header.classList.add('header-hidden');
+                // Regular navigation for non-About sections
+                // Remove active class from all links
+                navLinks.forEach(l => l.classList.remove('active'));
+                // Add active class to clicked link
+                e.target.classList.add('active');
+                
+                // Get the target section
+                const targetIndex = Array.from(sections).findIndex(
+                    section => section.id === targetId
+                );
+                
+                if (targetIndex === currentIndex) return;
+                
+                // Determine direction of transition
+                const isMovingRight = targetIndex > currentIndex;
+                
+                // Get current and target sections
+                const currentSection = sections[currentIndex];
+                const targetSection = sections[targetIndex];
+                
+                // Remove previous animation classes
+                sections.forEach(section => {
+                    section.classList.remove('slide-in-right', 'slide-in-left', 'fade-out');
+                });
+                
+                // Add animations
+                currentSection.classList.add('fade-out');
+                targetSection.classList.add(isMovingRight ? 'slide-in-right' : 'slide-in-left');
+                
+                // Modify header animation for section changes
+                if (targetId === 'about') {
+                    header.classList.remove('header-hidden');
+                    header.classList.add('header-visible');
+                    header.classList.remove('header-scroll-hidden'); // Reset scroll state
+                } else {
+                    header.classList.remove('header-visible');
+                    header.classList.add('header-hidden');
+                }
+                
+                // Slide to target section
+                document.querySelector('.sections-container').style.transform = 
+                    `translateX(-${targetIndex * 100}vw)`;
+                
+                // Update current index
+                currentIndex = targetIndex;
             }
-            
-            // Slide to target section
-            document.querySelector('.sections-container').style.transform = 
-                `translateX(-${targetIndex * 100}vw)`;
-            
-            // Update current index
-            currentIndex = targetIndex;
         });
     });
     
