@@ -45,6 +45,7 @@ header {
     width: 100%;
     top: 0;
     z-index: 2;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glitch-container {
@@ -565,4 +566,9 @@ h1, h2, h3 {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(45, 226, 230, 0.3);
+}
+
+/* Add this new class for scroll-based animation */
+.header-scroll-hidden {
+    transform: translateY(-100%);
 } 

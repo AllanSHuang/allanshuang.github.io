@@ -37,10 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
             currentSection.classList.add('fade-out');
             targetSection.classList.add(isMovingRight ? 'slide-in-right' : 'slide-in-left');
             
-            // Animate header based on target section
+            // Modify header animation for section changes
             if (targetId === 'about') {
                 header.classList.remove('header-hidden');
                 header.classList.add('header-visible');
+                header.classList.remove('header-scroll-hidden'); // Reset scroll state
             } else {
                 header.classList.remove('header-visible');
                 header.classList.add('header-hidden');
@@ -99,5 +100,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 skillsSection.classList.remove('skills-visible');
             }
         });
+    });
+
+    // Add scroll handler for About section
+    const aboutSection = document.getElementById('about');
+    let lastScrollTop = 0;
+
+    aboutSection.addEventListener('scroll', () => {
+        const scrollTop = aboutSection.scrollTop;
+        const header = document.querySelector('header');
+        
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+            // Scrolling down
+            header.classList.add('header-scroll-hidden');
+        } else {
+            // Scrolling up
+            header.classList.remove('header-scroll-hidden');
+        }
+        
+        lastScrollTop = scrollTop;
     });
 }); 
