@@ -256,6 +256,21 @@ main {
 .highlight {
     margin: 1rem 0;
     line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.highlight::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--neon-pink);
+}
+
+.experience-card .project-brief {
+    color: var(--neon-blue);
+    margin: 1rem 0;
+    font-size: 1.05rem;
 }
 
 .role {
@@ -398,12 +413,6 @@ h1, h2, h3 {
 
 .header-visible {
     transform: translateY(0);
-}
-
-.project-brief {
-    color: var(--neon-blue);
-    margin: 1rem 0;
-    font-size: 1.05rem;
 }
 
 .project-details {
