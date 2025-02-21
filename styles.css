@@ -91,9 +91,20 @@ header {
 .subtitle {
     font-size: 1.2rem;
     margin-top: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--neon-blue);
     font-family: var(--font-display);
     letter-spacing: 1px;
+    text-transform: uppercase;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--neon-blue);
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+    }
 }
 
 nav {
@@ -283,7 +294,16 @@ h1, h2, h3 {
     margin: 1.5rem 0;
     line-height: 1.8;
     font-size: 1.05rem;
-    color: rgba(255, 255, 255, 0.9);
+}
+
+.about-text strong {
+    color: var(--neon-pink);
+    font-weight: 500;
+}
+
+.about-text em {
+    color: var(--neon-blue);
+    font-style: normal;
 }
 
 .highlight-text {
