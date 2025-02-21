@@ -89,13 +89,15 @@ header {
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-top: 1rem;
+    margin-bottom: 3rem;
     color: var(--neon-blue);
     font-family: var(--font-display);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     animation: glow 1.5s ease-in-out infinite alternate;
+    padding: 0.5rem 0;
 }
 
 @keyframes glow {
@@ -105,6 +107,31 @@ header {
     to {
         text-shadow: 0 0 10px #fff, 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
     }
+}
+
+.subtitle::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 2px;
+    background: var(--neon-blue);
+    margin: 1.5rem auto 0;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.about-text:first-of-type {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.highlight-text {
+    color: var(--neon-pink);
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 3rem;
+    padding: 1rem 0;
+    text-align: center;
 }
 
 nav {
@@ -347,13 +374,14 @@ h1, h2, h3 {
 .about-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 1rem 0;
+    padding: 2rem 0;
 }
 
 .about-text {
-    margin: 1.5rem 0;
-    line-height: 1.8;
-    font-size: 1.05rem;
+    margin: 2rem 0;
+    line-height: 1.9;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .about-text strong {
