@@ -92,7 +92,7 @@ header {
 .subtitle {
     font-size: 1.3rem;
     margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: var(--neon-blue);
     font-family: var(--font-display);
     letter-spacing: 2px;
