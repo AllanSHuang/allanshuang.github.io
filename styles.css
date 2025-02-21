@@ -182,12 +182,13 @@ main {
 .skill-category h3 {
     color: var(--neon-blue);
     margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-    white-space: nowrap;
+    font-size: 1.2rem;
     font-family: var(--font-display);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-transform: uppercase;
     text-shadow: 0 0 10px rgba(45, 226, 230, 0.5);
+    line-height: 1.2;
+    min-height: 2.4em;
 }
 
 .skill-category ul {
@@ -200,6 +201,7 @@ main {
     position: relative;
     font-size: 1.1rem;
     transition: color 0.3s ease, transform 0.2s ease;
+    opacity: 0;
 }
 
 .skill-category li:hover {
@@ -498,4 +500,31 @@ h1, h2, h3 {
 
 .visible {
     opacity: 1;
-} 
+}
+
+/* Add drop-down animation for skills */
+@keyframes dropDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add JavaScript to trigger animations when section is visible */
+.skills-visible .skill-category li {
+    animation: dropDown 0.4s ease forwards;
+}
+
+/* Stagger the animation for each skill within a category */
+.skills-visible .skill-category li:nth-child(1) { animation-delay: 0.1s; }
+.skills-visible .skill-category li:nth-child(2) { animation-delay: 0.2s; }
+.skills-visible .skill-category li:nth-child(3) { animation-delay: 0.3s; }
+.skills-visible .skill-category li:nth-child(4) { animation-delay: 0.4s; }
+.skills-visible .skill-category li:nth-child(5) { animation-delay: 0.5s; }
+.skills-visible .skill-category li:nth-child(6) { animation-delay: 0.6s; }
+.skills-visible .skill-category li:nth-child(7) { animation-delay: 0.7s; }
+.skills-visible .skill-category li:nth-child(8) { animation-delay: 0.8s; } 

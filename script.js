@@ -72,4 +72,32 @@ document.addEventListener('DOMContentLoaded', () => {
             button.classList.toggle('active');
         });
     });
+
+    // Add this to your existing DOMContentLoaded event listener
+    const skillsSection = document.getElementById('skills');
+
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('skills-visible');
+            } else {
+                entry.target.classList.remove('skills-visible');
+            }
+        });
+    }, {
+        threshold: 0.2 // Trigger when 20% of the section is visible
+    });
+
+    // Start observing the skills section
+    observer.observe(skillsSection);
+
+    // Reset animations when leaving the section
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (link.getAttribute('href') !== '#skills') {
+                skillsSection.classList.remove('skills-visible');
+            }
+        });
+    });
 }); 
