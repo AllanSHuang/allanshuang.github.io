@@ -46,11 +46,11 @@ header {
     top: 0;
     z-index: 2;
     background: linear-gradient(to bottom, 
-        rgba(10,10,22,1) 0%,
-        rgba(10,10,22,0.9) 80%,
+        rgba(10,10,22,0.8) 0%,
+        rgba(10,10,22,0.4) 80%,
         rgba(10,10,22,0) 100%
     );
-    padding-bottom: 3rem; /* Add extra padding for gradient fade */
+    padding-bottom: 3rem;
 }
 
 .glitch-container {
@@ -380,7 +380,6 @@ h1, h2, h3 {
     max-width: 900px;
     margin: 0 auto;
     padding: 2rem;
-    background: rgba(10,10,22,0.8); /* Add slight background to improve readability */
     border-radius: 15px;
 }
 
@@ -389,6 +388,7 @@ h1, h2, h3 {
     line-height: 1.9;
     font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .about-text strong {
