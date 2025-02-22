@@ -1,4 +1,5 @@
 :root {
+    --neon-yellow: #ffd319;
     --neon-purple: #b829f7;
     --neon-blue: #2de2e6;
     --neon-pink: #ff3864;
@@ -206,9 +207,9 @@ main {
 .experience-card:hover,
 .project-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 20px rgba(45, 226, 230, 0.2);
-    border-color: var(--neon-blue);
+    background: rgba(255, 211, 25, 0.1);
+    box-shadow: 0 0 20px rgba(255, 211, 25, 0.2);
+    border-color: var(--neon-yellow);
 }
 
 .skill-category::after,
@@ -229,7 +230,7 @@ main {
 .skill-category:hover::after,
 .experience-card:hover::after,
 .project-card:hover::after {
-    box-shadow: 0 0 15px rgba(45, 226, 230, 0.3);
+    box-shadow: 0 0 15px rgba(255, 211, 25, 0.3);
 }
 
 .skill-category:hover li,
@@ -649,4 +650,10 @@ h1, h2, h3 {
 
 .project-card .highlight {
     color: rgba(255, 255, 255, 0.8); /* Reduced from pure white */
+}
+
+/* Update Projects section title */
+#projects h2 {
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
 } 
