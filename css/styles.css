@@ -101,31 +101,36 @@ header {
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 800;
-    text-shadow: 0.05em 0 0 var(--neon-blue),
-                 -0.05em -0.025em 0 var(--neon-blue);
+    position: relative;
+}
+
+/* Remove the old animation and add the glitch effect */
+.subtitle:not(.initial-load .subtitle) {
+    text-shadow: 0.05em 0 0 #0ff,
+                 -0.05em -0.025em 0 #0ff;
     animation: subtitleGlitch 725ms infinite;
 }
 
 @keyframes subtitleGlitch {
     0% {
-        text-shadow: 0.05em 0 0 var(--neon-blue),
-                     -0.05em -0.025em 0 var(--neon-blue);
+        text-shadow: 0.05em 0 0 #0ff,
+                     -0.05em -0.025em 0 #0ff;
     }
     15% {
-        text-shadow: -0.05em -0.025em 0 var(--neon-blue),
-                     0.025em 0.025em 0 var(--neon-blue);
+        text-shadow: -0.05em -0.025em 0 #0ff,
+                     0.025em 0.025em 0 #0ff;
     }
     49% {
-        text-shadow: -0.05em -0.025em 0 var(--neon-blue),
-                     0.025em 0.025em 0 var(--neon-blue);
+        text-shadow: -0.05em -0.025em 0 #0ff,
+                     0.025em 0.025em 0 #0ff;
     }
     50% {
-        text-shadow: 0.05em 0.025em 0 var(--neon-blue),
-                     0.05em 0 0 var(--neon-blue);
+        text-shadow: 0.05em 0.025em 0 #0ff,
+                     0.05em 0 0 #0ff;
     }
     100% {
-        text-shadow: 0.05em 0 0 var(--neon-blue),
-                     -0.05em -0.025em 0 var(--neon-blue);
+        text-shadow: 0.05em 0 0 #0ff,
+                     -0.05em -0.025em 0 #0ff;
     }
 }
 
