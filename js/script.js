@@ -119,21 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add scroll handler for About section
-    const aboutSection = document.getElementById('about');
-    const nav = document.querySelector('nav');
-    
-    aboutSection.addEventListener('scroll', () => {
-        const scrollTop = aboutSection.scrollTop;
-        
-        // Only show nav when completely at top, hide when scrolling down
-        if (scrollTop > 0) {
-            nav.classList.add('nav-hidden');
-        } else if (scrollTop === 0) {
-            nav.classList.remove('nav-hidden');
-        }
-    });
-
     let lastScrollY = window.scrollY;
 
     // Handle header visibility on scroll
