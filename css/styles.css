@@ -234,6 +234,7 @@ main {
     transition: all 0.3s ease;
     opacity: 0;
     cursor: pointer;
+    z-index: 1;
 }
 
 .skill-category li::before {
@@ -241,8 +242,8 @@ main {
 }
 
 .skill-category li:hover {
-    color: white;
-    transform: none;
+    color: #000;
+    font-weight: 600;
 }
 
 .skill-category li::after {
@@ -265,12 +266,13 @@ main {
     );
     transition: all 0.3s ease;
     pointer-events: none;
+    z-index: -1;
 }
 
 .skill-category li:hover::after {
     opacity: 1;
     border: 2px solid #0ff;
-    background: transparent;
+    background-color: #0ff;
 }
 
 /* Add a subtle animation for the skills grid */
