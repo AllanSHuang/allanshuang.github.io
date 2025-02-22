@@ -107,21 +107,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modify the scroll handler for About section
     const aboutSection = document.getElementById('about');
-    let lastScrollTop = 0;
 
     aboutSection.addEventListener('scroll', () => {
         const scrollTop = aboutSection.scrollTop;
         const header = document.querySelector('header');
         
-        // Only hide header if we've scrolled past the content
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down
+        // Hide header immediately when scrolling down
+        if (scrollTop > 0) {
             header.classList.add('header-scroll-hidden');
-        } else if (scrollTop === 0) {
-            // Only show header when fully scrolled to top
+        } else {
             header.classList.remove('header-scroll-hidden');
         }
-        
-        lastScrollTop = scrollTop;
     });
 }); 
