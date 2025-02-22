@@ -196,10 +196,12 @@ main {
 
 .skill-category,
 .experience-card,
-.project-card {
+.project-card,
+.about-content {
+    position: relative;
+    border: none;
     background: rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
-    position: relative;
     backdrop-filter: blur(5px);
 }
 
@@ -212,25 +214,93 @@ main {
     border-color: var(--neon-blue);
 }
 
-.skill-category::after,
-.experience-card::after,
-.project-card::after {
+.skill-category::before,
+.experience-card::before,
+.project-card::before,
+.about-content::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    border: 1px solid transparent;
     border-radius: 10px;
-    background: transparent;
-    transition: all 0.3s ease;
+    background: linear-gradient(45deg, 
+        transparent 20%, 
+        var(--neon-yellow) 40%,
+        var(--neon-blue) 60%,
+        var(--neon-pink) 80%,
+        transparent 100%
+    );
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
     pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover::before,
+.experience-card:hover::before,
+.project-card:hover::before,
+.about-content:hover::before {
+    opacity: 1;
+    animation: borderRotate 4s linear infinite;
+    background-size: 400% 400%;
+    filter: drop-shadow(0 0 8px var(--neon-blue));
+}
+
+@keyframes borderRotate {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.skill-category::after,
+.experience-card::after,
+.project-card::after,
+.about-content::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 12px;
+    background: 
+        linear-gradient(45deg, transparent 40%, var(--neon-blue)) top left,
+        linear-gradient(-45deg, transparent 40%, var(--neon-yellow)) top right,
+        linear-gradient(135deg, transparent 40%, var(--neon-pink)) bottom left,
+        linear-gradient(-135deg, transparent 40%, var(--neon-purple)) bottom right;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .skill-category:hover::after,
 .experience-card:hover::after,
-.project-card:hover::after {
-    box-shadow: 0 0 15px rgba(45, 226, 230, 0.5);
+.project-card:hover::after,
+.about-content:hover::after {
+    opacity: 0.5;
+    animation: cornerPulse 2s ease-in-out infinite;
+}
+
+@keyframes cornerPulse {
+    0%, 100% {
+        filter: brightness(1) blur(2px);
+    }
+    50% {
+        filter: brightness(1.5) blur(1px);
+    }
 }
 
 .skill-category:hover li,
