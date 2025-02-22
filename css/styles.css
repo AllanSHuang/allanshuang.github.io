@@ -18,7 +18,7 @@
 
 body {
     background-color: var(--dark-bg);
-    color: #ffffff;
+    color: var(--cyan);
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
