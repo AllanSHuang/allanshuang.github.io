@@ -277,6 +277,7 @@ main {
 
 .skill-category:hover h3 {
     transform: translateX(-50%) translateY(-2px);
+    color: var(--neon-blue);
     text-shadow: 0 0 15px rgba(255, 211, 25, 0.5);
 }
 
@@ -941,6 +942,7 @@ h1, h2, h3 {
 /* Adjust hover effects */
 .skill-category:hover h3 {
     transform: translateX(-50%) translateY(-2px);
+    color: var(--neon-blue);
     text-shadow: 0 0 15px rgba(255, 211, 25, 0.5);
 }
 
