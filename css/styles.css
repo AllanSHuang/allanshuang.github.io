@@ -235,7 +235,7 @@ main {
     transition: all 0.3s ease;
     opacity: 0;
     cursor: pointer;
-    background: rgba(255, 56, 100, 0.2);
+    background: transparent;
     width: 80%;
     color: white;
     clip-path: polygon(
