@@ -119,4 +119,34 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('header-scroll-hidden');
         }
     });
+
+    let lastScrollY = window.scrollY;
+
+    // Handle header visibility on scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY) {
+            // Scrolling down
+            header.classList.add('header-hidden');
+        } else if (window.scrollY === 0) {
+            // At the top
+            header.classList.remove('header-hidden');
+        }
+        lastScrollY = window.scrollY;
+    });
+
+    // Reset section state when leaving
+    const sectionsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                // Reset state when section is not visible
+                const section = entry.target;
+                const details = section.querySelectorAll('.project-details.visible, .experience-details.visible');
+                details.forEach(detail => detail.classList.remove('visible'));
+                const moreButtons = section.querySelectorAll('.more-btn');
+                moreButtons.forEach(btn => btn.textContent = 'More');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => sectionsObserver.observe(section));
 }); 
