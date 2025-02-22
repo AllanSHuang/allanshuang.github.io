@@ -327,13 +327,19 @@ main {
 
 .tech-stack span {
     background: rgba(255, 56, 100, 0.9);
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.9rem;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.8rem;
     color: white;
     font-family: var(--font-display);
     letter-spacing: 0.5px;
-    transition: all 0.3s ease;
+    clip-path: polygon(
+        -15px 0%,
+        calc(100% + 15px) 0%,
+        calc(100% + 15px) 100%,
+        20px 100%,
+        -15px calc(100% - 35px)
+    );
+    border-right: 2px solid var(--neon-pink);
 }
 
 .contact-info {
@@ -568,14 +574,14 @@ h1, h2, h3 {
     display: block;
     border: none;
     border-radius: 0;
-    font-size: 0.9rem; /* Smaller font */
+    font-size: 0.8rem;
     line-height: 100%;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 600;
     font-family: var(--font-display);
-    padding: 12px 35px; /* Smaller padding */
-    margin: 10px 0;
+    padding: 8px 25px;
+    margin: 20px 0 5px 0;
     color: white;
     border-right: 3px solid var(--neon-pink);
     background-color: var(--background-color);
@@ -592,7 +598,7 @@ h1, h2, h3 {
 /* Update hover state for 100% opacity */
 .more-btn:hover {
     animation: hover var(--glitched-duration) infinite linear;
-    background-color: var(--neon-pink); /* Full opacity on hover */
+    background-color: var(--neon-pink);
 }
 
 .more-btn::after {
@@ -602,7 +608,7 @@ h1, h2, h3 {
     bottom: 0px;
     right: 25px;
     padding: 2px 2px 0px 2px;
-    font-size: 0.5rem; /* Smaller R-25 text */
+    font-size: 0.45rem;
     line-height: 9px;
     color: var(--dark-bg);
     background-color: var(--neon-pink);
@@ -616,7 +622,7 @@ h1, h2, h3 {
     display: none;
     background-color: var(--background-color);
     width: calc(100% + (var(--outside) * 2));
-    height: 10px; /* Slightly smaller glitch bar */
+    height: 8px;
     top: 0px;
     left: calc(0px - 1px - var(--outside));
     border-left: 2px solid var(--neon-pink);
@@ -627,7 +633,7 @@ h1, h2, h3 {
 .more-btn:hover::before {
     display: block;
     animation: hoverbefore var(--glitched-duration) infinite linear;
-    background-color: var(--neon-pink); /* Full opacity on hover */
+    background-color: var(--neon-pink);
 }
 
 @keyframes hover {
@@ -770,7 +776,7 @@ h1, h2, h3 {
 }
 
 .project-card .highlight {
-    color: rgba(255, 255, 255, 0.8); /* Reduced from pure white */
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Update Projects section title */
@@ -802,13 +808,13 @@ h1, h2, h3 {
 }
 
 .about-content:hover .highlight-phrase {
-    color: var(--neon-yellow); /* Changed to yellow on hover */
-    text-shadow: 0 0 10px rgba(255, 211, 25, 0.3); /* Add subtle glow */
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.3);
 }
 
 /* Update skills section padding since we removed the main title */
 #skills {
-    padding-top: 8rem !important; /* Adjust this value as needed */
+    padding-top: 8rem !important;
 }
 
 /* Update skill category styling */
