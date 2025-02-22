@@ -272,7 +272,6 @@ main {
     font-family: 'Cyberpunk-Font-OG', var(--font-display);
     letter-spacing: 2px;
     text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
     line-height: 1.2;
 }
 
