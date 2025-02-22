@@ -562,126 +562,124 @@ h1, h2, h3 {
 
 /* Update More button styling to match Cyberpunk repo exactly */
 .more-btn {
+    --background-color: rgba(255, 56, 100, 0.2);
+    --glitched-duration: 0.9s;
     position: relative;
-    background: transparent;
-    color: white !important;
+    display: block;
     border: none;
-    padding: 0.5rem 2rem;
+    border-radius: 0;
+    font-size: 1rem;
+    line-height: 100%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
     font-family: var(--font-display);
-    letter-spacing: 1px;
+    padding: 15px 45px;
+    margin: 10px 0;
+    color: white;
+    border-right: 3px solid var(--neon-pink);
+    background-color: var(--background-color);
     cursor: pointer;
-    margin: 1rem 0;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-}
-
-/* Base button frame */
-.more-btn::before {
-    content: 'More';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 56, 100, 0.2);
-    border: 1px solid var(--neon-pink);
     clip-path: polygon(
-        0 0,
-        90% 0,
-        100% 30%,
-        100% 100%,
-        10% 100%,
-        0 70%
+        -15px 0%,
+        calc(100% + 15px) 0%,
+        calc(100% + 15px) 100%,
+        20px 100%,
+        -15px calc(100% - 35px)
     );
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
 }
 
-/* Glitch layer */
+.more-btn:hover {
+    animation: hover var(--glitched-duration) infinite linear;
+}
+
 .more-btn::after {
-    content: 'More';
+    content: "R-25";
+    display: block;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 56, 100, 0.2);
-    border: 1px solid var(--neon-pink);
-    clip-path: polygon(
-        0 0,
-        90% 0,
-        100% 30%,
-        100% 100%,
-        10% 100%,
-        0 70%
-    );
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translate(4px, 0);
-    text-transform: uppercase;
+    bottom: 0px;
+    right: 25px;
+    padding: 2px 2px 0px 2px;
+    font-size: 0.6rem;
+    line-height: 9px;
+    color: var(--dark-bg);
+    background-color: var(--neon-pink);
+    border-left: 2px solid var(--neon-pink);
 }
 
-/* Hover effects */
+.more-btn:hover::after {
+    animation: hoverafter var(--glitched-duration) infinite linear;
+}
+
+.more-btn::before {
+    --outside: 4px;
+    content: "";
+    position: absolute;
+    display: none;
+    background-color: var(--background-color);
+    width: calc(100% + (var(--outside) * 2));
+    height: 12px;
+    top: 0px;
+    left: calc(0px - 1px - var(--outside));
+    border-left: 2px solid var(--neon-pink);
+    border-right: 2px solid var(--neon-pink);
+}
+
+.more-btn:hover::before {
+    display: block;
+    animation: hoverbefore var(--glitched-duration) infinite linear;
+}
+
+@keyframes hover {
+    0% { transform: skew(0deg); }
+    60% { transform: skew(0deg); }
+    61% { transform: skew(10deg); }
+    70% { transform: skew(10deg); }
+    71% { transform: skew(0deg); }
+    100% { transform: skew(0deg); }
+}
+
+@keyframes hoverbefore {
+    0% { display: none; top: 0px; }
+    10% { display: none; top: 0px; }
+    11% { display: block; top: 10px; left: calc(0px - 0px - var(--outside)); }
+    29% { top: 10px; }
+    30% { display: none; top: 0px; }
+    50% { display: none; top: 0px; }
+    51% { display: block; top: 55px; filter: blur(1px); height: 22px; }
+    90% { display: block; top: 55px; height: 22px; }
+    91% { filter: blur(0px); display: none; top: 0px; height: 12px; }
+    100% { display: none; top: 0px; }
+}
+
+@keyframes hoverafter {
+    0% { right: 45px; }
+    10% { right: 45px; }
+    11% { right: 35px; }
+    20% { transform: skew(0deg); }
+    21% { transform: skew(-10deg); }
+    40% { transform: skew(-10deg); }
+    41% { transform: skew(0deg); }
+    49% { right: 35px; }
+    50% { right: 55px; }
+    60% { right: 55px; }
+    61% { right: 35px; }
+    70% { transform: skew(0deg); }
+    71% { transform: skew(10deg); }
+    80% { transform: skew(10deg); }
+    81% { transform: skew(0deg); }
+    100% { right: 35px; }
+}
+
+/* Update hover state */
 .more-btn:hover::before,
 .more-btn:hover::after {
-    background: rgba(255, 56, 100, 1);
+    background: var(--neon-pink);
 }
 
-/* Glitch animations */
-.more-btn {
-    animation: glitch 1s linear infinite;
-}
-
-@keyframes glitch {
-    2%, 64% {
-        transform: translate(2px, 0) skew(0deg);
-    }
-    4%, 60% {
-        transform: translate(-2px, 0) skew(0deg);
-    }
-    62% {
-        transform: translate(0, 0) skew(5deg);
-    }
-}
-
-.more-btn::before {
-    animation: glitchTop 1s linear infinite;
-    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-    transform: translate(-2px, -2px);
-}
-
-.more-btn::after {
-    animation: glitchBottom 1.5s linear infinite;
-    clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-    transform: translate(2px, 2px);
-}
-
-@keyframes glitchTop {
-    2%, 64% {
-        transform: translate(2px, -2px);
-    }
-    4%, 60% {
-        transform: translate(-2px, 2px);
-    }
-    62% {
-        transform: translate(13px, -1px) skew(-13deg);
-    }
-}
-
-@keyframes glitchBottom {
-    2%, 64% {
-        transform: translate(-2px, 0);
-    }
-    4%, 60% {
-        transform: translate(-2px, 0);
-    }
-    62% {
-        transform: translate(-22px, 5px) skew(21deg);
-    }
+.more-btn.active {
+    background: var(--neon-pink);
+    color: white;
 }
 
 .hidden {
