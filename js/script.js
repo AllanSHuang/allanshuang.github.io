@@ -179,18 +179,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add header and nav scroll animation for About section
+    // Remove the about content scroll handler
     const aboutSection = document.getElementById('about');
-    const aboutContent = document.querySelector('.about-content');
-    
+    let lastScrollTop = 0;
+
     aboutSection.addEventListener('scroll', () => {
         const scrollTop = aboutSection.scrollTop;
         
-        // Add/remove scroll-active class based on scroll position
-        if (scrollTop > 50) {
-            aboutContent.classList.add('scroll-active');
-        } else {
-            aboutContent.classList.remove('scroll-active');
+        // Add classes when scrolling down, remove when at top
+        if (scrollTop > lastScrollTop && scrollTop > 50) {
+            header.classList.add('header-scroll-hidden');
+            nav.classList.add('nav-hidden');
+        } else if (scrollTop === 0) {
+            header.classList.remove('header-scroll-hidden');
+            nav.classList.remove('nav-hidden');
         }
+        
+        lastScrollTop = scrollTop;
     });
 }); 
