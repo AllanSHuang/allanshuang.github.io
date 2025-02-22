@@ -302,14 +302,54 @@ main {
 }
 
 .skill-category {
-    animation: fadeInUp 0.6s ease backwards;
+    padding: 3rem 1.5rem 1.5rem;
+    position: relative;
+    margin-top: 1rem;
 }
 
-/* Stagger the animation for each category */
-.skill-category:nth-child(1) { animation-delay: 0.1s; }
-.skill-category:nth-child(2) { animation-delay: 0.2s; }
-.skill-category:nth-child(3) { animation-delay: 0.3s; }
-.skill-category:nth-child(4) { animation-delay: 0.4s; }
+.skill-category h3 {
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.3);
+    transition: all 0.3s ease;
+}
+
+.skill-category {
+    opacity: 0;
+    animation: none;
+}
+
+.skills-visible .skill-category {
+    animation: slideInFromLeft 0.6s ease forwards;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.skills-visible .skill-category:nth-child(1) { animation-delay: 0.1s; }
+.skills-visible .skill-category:nth-child(2) { animation-delay: 0.3s; }
+.skills-visible .skill-category:nth-child(3) { animation-delay: 0.5s; }
+.skills-visible .skill-category:nth-child(4) { animation-delay: 0.7s; }
+
+.skill-category:hover h3 {
+    transform: translateX(-50%) translateY(-2px);
+    text-shadow: 0 0 15px rgba(255, 211, 25, 0.5);
+}
 
 .experience-card, .project-card {
     padding: 1.5rem;
@@ -702,26 +742,55 @@ h1, h2, h3 {
 
 /* Update skill category styling */
 .skill-category {
-    padding: 2rem 1.5rem 1.5rem;
+    padding: 3rem 1.5rem 1.5rem;
     position: relative;
+    margin-top: 1rem;
 }
 
 .skill-category h3 {
     position: absolute;
-    top: -1rem;
+    top: 0.5rem;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--dark-bg);
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 5px;
     white-space: nowrap;
-    border: 1px solid var(--neon-yellow);
-    box-shadow: 0 0 10px rgba(255, 211, 25, 0.2);
+    font-size: 1.2rem;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.3);
+    transition: all 0.3s ease;
 }
 
-/* Adjust hover effect for titles */
+/* Remove existing category animations */
+.skill-category {
+    opacity: 0;
+    animation: none;
+}
+
+/* Add new category slide-in animations */
+.skills-visible .skill-category {
+    animation: slideInFromLeft 0.6s ease forwards;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Stagger the animation for each category */
+.skills-visible .skill-category:nth-child(1) { animation-delay: 0.1s; }
+.skills-visible .skill-category:nth-child(2) { animation-delay: 0.3s; }
+.skills-visible .skill-category:nth-child(3) { animation-delay: 0.5s; }
+.skills-visible .skill-category:nth-child(4) { animation-delay: 0.7s; }
+
+/* Adjust hover effects */
 .skill-category:hover h3 {
-    box-shadow: 0 0 15px rgba(255, 211, 25, 0.4);
     transform: translateX(-50%) translateY(-2px);
-    transition: all 0.3s ease;
+    text-shadow: 0 0 15px rgba(255, 211, 25, 0.5);
 } 
