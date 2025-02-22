@@ -1,5 +1,5 @@
 :root {
-    --neon-yellow: #ffd319;
+    --neon-yellow: #ffd900;
     --neon-purple: #b829f7;
     --neon-blue: #2de2e6;
     --neon-pink: #ff3864;
@@ -223,32 +223,52 @@ main {
 
 .skill-category ul {
     list-style: none;
+    text-align: center;
 }
 
 .skill-category li {
     margin: 0.8rem 0;
-    padding-left: 1.5rem;
+    padding: 0.5rem 1rem;
     position: relative;
     font-size: 1.1rem;
-    transition: color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     opacity: 0;
-}
-
-.skill-category li:hover {
-    color: var(--neon-pink);
-    transform: translateX(10px);
+    cursor: pointer;
 }
 
 .skill-category li::before {
-    content: ">";
-    position: absolute;
-    left: 0;
-    color: var(--neon-pink);
-    transition: transform 0.2s ease;
+    display: none;
 }
 
-.skill-category li:hover::before {
-    transform: translateX(5px);
+.skill-category li:hover {
+    color: white;
+    transform: none;
+}
+
+.skill-category li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid var(--neon-pink);
+    opacity: 0;
+    clip-path: polygon(
+        -15px 0%,
+        calc(100% + 15px) 0%,
+        calc(100% + 15px) 100%,
+        20px 100%,
+        -15px calc(100% - 35px)
+    );
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.skill-category li:hover::after {
+    opacity: 1;
+    background: rgba(255, 56, 100, 0.1);
 }
 
 /* Add a subtle animation for the skills grid */
