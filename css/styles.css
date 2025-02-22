@@ -314,11 +314,7 @@ main {
 }
 
 .skill-category li:hover {
-    color: black;
-    font-weight: 600;
-    background: #0ff;
-    border-color: #0ff;
-    transform: translateY(-2px);
+    color: var(--neon-yellow);
 }
 
 /* Add a subtle animation for the skills grid */
