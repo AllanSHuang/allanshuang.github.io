@@ -4,7 +4,7 @@
     --neon-blue: #2de2e6;
     --neon-pink: #ff3864;
     --dark-bg: #0a0a16;
-    --cyber-gradient: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+    --cyber-gradient: linear-gradient(45deg, var(--neon-yellow), var(--neon-blue));
     --font-display: 'Orbitron', sans-serif;
     --font-body: 'Chakra Petch', sans-serif;
     --font-accent: 'Russo One', sans-serif;
