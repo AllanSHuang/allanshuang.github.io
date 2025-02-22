@@ -618,10 +618,16 @@ h1, h2, h3 {
 }
 
 /* Change text color to dark pink on hover */
-.more-btn:hover,
-.more-btn.active {
-    color: #2a0a12; /* Dark pink when hovering or active */
+.more-btn:hover {
+    animation: hover var(--glitched-duration) infinite linear;
+    color: #2a0a12;
     background-color: rgba(0, 255, 255, 0.9);
+}
+
+.more-btn.active {
+    color: #2a0a12;
+    background-color: rgba(0, 255, 255, 0.9);
+    animation: hover var(--glitched-duration) infinite linear;
 }
 
 .more-btn::before {
@@ -690,11 +696,6 @@ h1, h2, h3 {
 .more-btn:hover::before,
 .more-btn:hover::after {
     background: var(--neon-pink);
-}
-
-.more-btn.active {
-    color: #2a0a12;
-    background-color: rgba(0, 255, 255, 0.9);
 }
 
 .hidden {
