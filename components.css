@@ -118,13 +118,13 @@
     overflow: hidden;
     opacity: 0;
     transform: translateY(20px);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Slower, smoother transition */
 }
 
 /* Showing animation */
 .project-details.visible,
 .experience-details.visible {
-    max-height: 500px;
+    max-height: 1000px; /* Increased to accommodate larger content */
     opacity: 1;
     transform: translateY(0);
 }
@@ -132,7 +132,7 @@
 /* Hiding animation */
 .project-details.expanded,
 .experience-details.expanded {
-    max-height: 500px;
+    max-height: 1000px; /* Match the visible state */
     opacity: 1;
     transform: translateY(0);
 }
@@ -143,7 +143,13 @@
     max-height: 0;
     opacity: 0;
     transform: translateY(-20px);
-    pointer-events: none; /* Prevent interaction during animation */
+    pointer-events: none;
+}
+
+/* Project card specific layout adjustments */
+.project-card .project-details {
+    margin: 1rem 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Match experience timing */
 }
 
 /* Skill category card style */
