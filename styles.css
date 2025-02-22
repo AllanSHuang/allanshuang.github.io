@@ -249,15 +249,14 @@ main {
 }
 
 .skill-category h3 {
-    color: var(--neon-blue);
+    color: var(--neon-yellow);
     margin-bottom: 1.5rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-family: var(--font-display);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    text-shadow: 0 0 10px rgba(45, 226, 230, 0.5);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
     line-height: 1.2;
-    min-height: 2.4em;
 }
 
 .skill-category ul {
@@ -683,4 +682,15 @@ h1, h2, h3 {
 /* Add hover effect for about text */
 .about-content:hover .about-text {
     color: rgba(255, 255, 255, 0.95);
+}
+
+/* Add highlighting for phrases */
+.highlight-phrase {
+    color: var(--neon-blue);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.about-content:hover .highlight-phrase {
+    color: var(--neon-yellow);
 } 
