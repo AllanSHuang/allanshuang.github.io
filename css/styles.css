@@ -443,7 +443,7 @@ h1, h2, h3 {
     padding: 1.5rem;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     position: relative;
     backdrop-filter: blur(5px);
@@ -453,7 +453,7 @@ h1, h2, h3 {
     transform: translateY(-5px);
     background: rgba(45, 226, 230, 0.2);
     box-shadow: 0 0 20px rgba(45, 226, 230, 0.3);
-    border-color: var(--neon-blue);
+    border: 3px solid var(--neon-blue);
 }
 
 .about-text {
@@ -692,8 +692,8 @@ h1, h2, h3 {
 }
 
 .more-btn.active {
-    background: rgba(0, 255, 255, 0.9);
-    color: white;
+    color: #2a0a12;
+    background-color: rgba(0, 255, 255, 0.9);
 }
 
 .hidden {
@@ -773,10 +773,11 @@ h1, h2, h3 {
 }
 
 .project-card h3 {
-    color: var(--neon-blue);
+    color: var(--neon-yellow);
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    font-family: 'Cyberpunk-Font-OG', var(--font-display);
+    font-family: 'Cyberpunk', var(--font-display);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
 }
 
 .project-card .project-brief {
