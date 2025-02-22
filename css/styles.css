@@ -796,7 +796,7 @@ h1, h2, h3 {
 
 .subsection-title {
     margin-top: 3rem;
-    color: var(--neon-yellow);
+    color: var(--neon-blue);
     font-size: 1.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
