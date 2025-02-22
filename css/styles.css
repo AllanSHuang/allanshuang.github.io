@@ -1,0 +1,987 @@
+:root {
+    --neon-yellow: #ffd319;
+    --neon-purple: #b829f7;
+    --neon-blue: #2de2e6;
+    --neon-pink: #ff3864;
+    --dark-bg: #0a0a16;
+    --cyber-gradient: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Chakra Petch', sans-serif;
+    --font-accent: 'Russo One', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.cyber-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(0deg, rgba(10,10,22,0.3), rgba(10,10,22,0.3)),
+        url('../images/momo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+}
+
+header {
+    padding: 4rem 2rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glitch-container {
+    position: relative;
+    display: inline-block;
+}
+
+@font-face {
+    font-family: 'Cyberpunk-Font-OG';
+    src: url('../fonts/Cyberpunk-Regular.woff2') format('woff2'),
+         url('../fonts/Cyberpunk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cyberpunk';
+    src: url('../fonts/Cyberpunk.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Oxanium';
+    src: url('../fonts/oxanium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BlenderProBook';
+    src: url('../fonts/blenderprobook.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.glitch {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    text-shadow: 0.05em 0 0 var(--neon-pink),
+                 -0.05em -0.025em 0 var(--neon-blue);
+    animation: glitch 725ms infinite;
+    font-family: 'BlenderProBook', var(--font-accent);
+    letter-spacing: 4px;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 var(--neon-pink),
+                     -0.05em -0.025em 0 var(--neon-blue);
+    }
+    15% {
+        text-shadow: -0.05em -0.025em 0 var(--neon-pink),
+                     0.025em 0.025em 0 var(--neon-blue);
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 var(--neon-pink),
+                     0.025em 0.025em 0 var(--neon-blue);
+    }
+    50% {
+        text-shadow: 0.05em 0.025em 0 var(--neon-pink),
+                     0.05em 0 0 var(--neon-blue);
+    }
+    100% {
+        text-shadow: 0.05em 0 0 var(--neon-pink),
+                     -0.05em -0.025em 0 var(--neon-blue);
+    }
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--neon-blue);
+    font-family: 'BlenderProBook', var(--font-accent);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: subtleGlow 1.5s ease-in-out infinite alternate;
+    padding: 0.5rem 0;
+}
+
+@keyframes subtleGlow {
+    from {
+        text-shadow: 0 0 2px #fff, 0 0 4px var(--neon-blue);
+    }
+    to {
+        text-shadow: 0 0 4px #fff, 0 0 8px var(--neon-blue);
+    }
+}
+
+.subtitle::after {
+    content: '';
+    display: block;
+    width: 150px;
+    height: 2px;
+    background: var(--neon-blue);
+    margin: 1rem auto 0;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+
+.about-text:first-of-type {
+    margin-top: 0.5rem;
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.highlight-text {
+    color: var(--neon-pink);
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 3rem;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav {
+    background: transparent;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--neon-blue);
+}
+
+nav a.active {
+    color: var(--neon-pink);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.neo-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(45, 226, 230, 0.1);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-category,
+.experience-card,
+.project-card,
+.about-content {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.skill-category h3 {
+    color: var(--neon-yellow);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-family: 'Cyberpunk-Font-OG', var(--font-display);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
+    line-height: 1.2;
+}
+
+.skill-category:hover h3 {
+    transform: translateX(-50%) translateY(-2px);
+    text-shadow: 0 0 15px rgba(255, 211, 25, 0.5);
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    margin: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+    opacity: 0;
+}
+
+.skill-category li:hover {
+    color: var(--neon-pink);
+    transform: translateX(10px);
+}
+
+.skill-category li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--neon-pink);
+    transition: transform 0.2s ease;
+}
+
+.skill-category li:hover::before {
+    transform: translateX(5px);
+}
+
+/* Add a subtle animation for the skills grid */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-category {
+    padding: 3rem 1.5rem 1.5rem;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.skill-category h3 {
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.3);
+    transition: all 0.3s ease;
+}
+
+.skill-category {
+    opacity: 0;
+    animation: none;
+}
+
+.skills-visible .skill-category {
+    animation: slideInFromLeft 0.6s ease forwards;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.skills-visible .skill-category:nth-child(1) { animation-delay: 0.1s; }
+.skills-visible .skill-category:nth-child(2) { animation-delay: 0.3s; }
+.skills-visible .skill-category:nth-child(3) { animation-delay: 0.5s; }
+.skills-visible .skill-category:nth-child(4) { animation-delay: 0.7s; }
+
+.experience-card, .project-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.experience-card h3 {
+    letter-spacing: 1px;
+    font-family: 'Cyberpunk-Font-OG', var(--font-display);
+}
+
+.tech-stack {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tech-stack span {
+    background: rgba(255, 56, 100, 0.9);
+    padding: 0.3rem 1rem;
+    font-size: 0.75rem;
+    color: white;
+    font-family: var(--font-display);
+    letter-spacing: 0.5px;
+    clip-path: polygon(
+        20% 0,     /* Point 1 */
+        80% 0,     /* Point 2 */
+        100% 0,    /* Point 3 */
+        100% 100%, /* Point 4 */
+        80% 100%,  /* Point 5 */
+        20% 100%,  /* Point 6 */
+        0 100%,    /* Point 7 */
+        0 0        /* Point 8 */
+    );
+    border-right: 2px solid var(--neon-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+    line-height: 1;
+}
+
+.contact-info {
+    text-align: center;
+}
+
+.contact-info p {
+    margin: 1rem 0;
+}
+
+.company-type {
+    color: var(--neon-blue);
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.experience-card:hover .company-type {
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.3);
+}
+
+.date {
+    color: var(--neon-pink);
+    margin-bottom: 1rem;
+    font-size: 0.9em;
+    font-family: var(--font-display);
+    letter-spacing: 1px;
+}
+
+.highlight {
+    margin: 1rem 0;
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.highlight::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--neon-pink);
+}
+
+.experience-card .project-brief {
+    color: var(--neon-blue);
+    margin: 1rem 0;
+    font-size: 1.05rem;
+}
+
+.role {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0.5rem 0;
+    font-weight: 500;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .glitch {
+        font-size: 2.5rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.about-content:hover {
+    transform: translateY(-5px);
+    background: rgba(45, 226, 230, 0.2);
+    box-shadow: 0 0 20px rgba(45, 226, 230, 0.3);
+    border-color: var(--neon-blue);
+}
+
+.about-text {
+    margin: 1rem 0;
+    line-height: 1.9;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.about-text strong {
+    color: var(--neon-pink);
+    font-weight: 500;
+}
+
+.about-text em {
+    color: var(--neon-blue);
+    font-style: normal;
+}
+
+.highlight-text {
+    color: var(--neon-pink);
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.page-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.sections-container {
+    display: flex;
+    width: 500%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    overflow-y: scroll;
+    padding: 2rem;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    position: relative;
+    padding-top: 20rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.section:not(#about) {
+    padding-top: 6rem;
+}
+
+.section.active {
+    opacity: 1;
+}
+
+/* Add animation classes */
+.slide-in-right {
+    animation: slideInRight 0.6s forwards;
+    z-index: 1;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s forwards;
+    z-index: 1;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Add fade-out animation */
+.fade-out {
+    animation: fadeOut 0.6s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Add new classes for header animations */
+.header-hidden {
+    transform: translateY(-150%);
+}
+
+.header-visible {
+    transform: translateY(0);
+}
+
+.project-details,
+.experience-card .project-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+}
+
+.project-details.expanded,
+.experience-card .project-details.expanded {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.project-details.visible,
+.experience-card .project-details.visible {
+    opacity: 1;
+}
+
+/* Update More button size and hover opacity */
+.more-btn {
+    --background-color: rgba(255, 56, 100, 0.2);
+    --glitched-duration: 0.9s;
+    position: relative;
+    display: block;
+    border: none;
+    border-radius: 0;
+    font-size: 0.8rem;
+    line-height: 100%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: var(--font-display);
+    padding: 8px 25px;
+    margin: 20px 0 5px 0;
+    color: white;
+    border-right: 3px solid var(--neon-pink);
+    background-color: var(--background-color);
+    cursor: pointer;
+    clip-path: polygon(
+        -15px 0%,
+        calc(100% + 15px) 0%,
+        calc(100% + 15px) 100%,
+        20px 100%,
+        -15px calc(100% - 35px)
+    );
+}
+
+/* Update hover state for 100% opacity */
+.more-btn:hover {
+    animation: hover var(--glitched-duration) infinite linear;
+    background-color: var(--neon-pink);
+}
+
+.more-btn::before {
+    --outside: 4px;
+    content: "";
+    position: absolute;
+    display: none;
+    background-color: var(--background-color);
+    width: calc(100% + (var(--outside) * 2));
+    height: 8px;
+    top: 0px;
+    left: calc(0px - 1px - var(--outside));
+    border-left: 2px solid var(--neon-pink);
+    border-right: 2px solid var(--neon-pink);
+}
+
+/* Keep the hover animations but update the background color */
+.more-btn:hover::before {
+    display: block;
+    animation: hoverbefore var(--glitched-duration) infinite linear;
+    background-color: var(--neon-pink);
+}
+
+@keyframes hover {
+    0% { transform: skew(0deg); }
+    60% { transform: skew(0deg); }
+    61% { transform: skew(10deg); }
+    70% { transform: skew(10deg); }
+    71% { transform: skew(0deg); }
+    100% { transform: skew(0deg); }
+}
+
+@keyframes hoverbefore {
+    0% { display: none; top: 0px; }
+    10% { display: none; top: 0px; }
+    11% { display: block; top: 10px; left: calc(0px - 0px - var(--outside)); }
+    29% { top: 10px; }
+    30% { display: none; top: 0px; }
+    50% { display: none; top: 0px; }
+    51% { display: block; top: 55px; filter: blur(1px); height: 22px; }
+    90% { display: block; top: 55px; height: 22px; }
+    91% { filter: blur(0px); display: none; top: 0px; height: 12px; }
+    100% { display: none; top: 0px; }
+}
+
+@keyframes hoverafter {
+    0% { right: 45px; }
+    10% { right: 45px; }
+    11% { right: 35px; }
+    20% { transform: skew(0deg); }
+    21% { transform: skew(-10deg); }
+    40% { transform: skew(-10deg); }
+    41% { transform: skew(0deg); }
+    49% { right: 35px; }
+    50% { right: 55px; }
+    60% { right: 55px; }
+    61% { right: 35px; }
+    70% { transform: skew(0deg); }
+    71% { transform: skew(10deg); }
+    80% { transform: skew(10deg); }
+    81% { transform: skew(0deg); }
+    100% { right: 35px; }
+}
+
+/* Update hover state */
+.more-btn:hover::before,
+.more-btn:hover::after {
+    background: var(--neon-pink);
+}
+
+.more-btn.active {
+    background: var(--neon-pink);
+    color: white;
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.visible {
+    opacity: 1;
+}
+
+/* Add drop-down animation for skills */
+@keyframes dropDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add JavaScript to trigger animations when section is visible */
+.skills-visible .skill-category li {
+    animation: dropDown 0.4s ease forwards;
+}
+
+/* Stagger the animation for each skill within a category */
+.skills-visible .skill-category li:nth-child(1) { animation-delay: 0.1s; }
+.skills-visible .skill-category li:nth-child(2) { animation-delay: 0.2s; }
+.skills-visible .skill-category li:nth-child(3) { animation-delay: 0.3s; }
+.skills-visible .skill-category li:nth-child(4) { animation-delay: 0.4s; }
+.skills-visible .skill-category li:nth-child(5) { animation-delay: 0.5s; }
+.skills-visible .skill-category li:nth-child(6) { animation-delay: 0.6s; }
+.skills-visible .skill-category li:nth-child(7) { animation-delay: 0.7s; }
+.skills-visible .skill-category li:nth-child(8) { animation-delay: 0.8s; }
+
+.subsection-title {
+    margin-top: 3rem;
+    color: var(--neon-yellow);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
+    font-family: 'Cyberpunk-Font-OG', var(--font-display);
+}
+
+/* Add this new class for scroll-based animation */
+.header-scroll-hidden {
+    transform: translateY(-100%);
+}
+
+/* Optional: Hide scrollbar but keep functionality */
+.section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.section::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.section::-webkit-scrollbar-thumb {
+    background: var(--neon-blue);
+    border-radius: 4px;
+}
+
+/* Update project card styling */
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.project-card h3 {
+    color: var(--neon-blue);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Cyberpunk-Font-OG', var(--font-display);
+}
+
+.project-card .project-brief {
+    color: var(--neon-blue);
+    margin: 0.5rem 0;
+    font-size: 1.05rem;
+}
+
+.project-card .highlight {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Update Projects section title */
+#projects h2 {
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
+}
+
+/* Update section titles to match */
+#projects h2,
+.subsection-title {
+    color: var(--neon-yellow);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
+}
+
+/* Add hover effect for about text */
+.about-content:hover .about-text {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Update highlighting for phrases */
+.highlight-phrase {
+    color: var(--neon-blue);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.about-content:hover .highlight-phrase {
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.3);
+}
+
+/* Update skills section padding since we removed the main title */
+#skills {
+    padding-top: 8rem !important;
+}
+
+/* Update skill category styling */
+.skill-category {
+    padding: 3rem 1.5rem 1.5rem;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.skill-category h3 {
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Remove existing category animations */
+.skill-category {
+    opacity: 0;
+    animation: none;
+}
+
+/* Add new category slide-in animations */
+.skills-visible .skill-category {
+    animation: slideInFromLeft 0.6s ease forwards;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Stagger the animation for each category */
+.skills-visible .skill-category:nth-child(1) { animation-delay: 0.1s; }
+.skills-visible .skill-category:nth-child(2) { animation-delay: 0.3s; }
+.skills-visible .skill-category:nth-child(3) { animation-delay: 0.5s; }
+.skills-visible .skill-category:nth-child(4) { animation-delay: 0.7s; }
+
+/* Adjust hover effects */
+.skill-category:hover h3 {
+    transform: translateX(-50%) translateY(-2px);
+    text-shadow: 0 0 15px rgba(255, 211, 25, 0.5);
+}
+
+/* Update hover effect for tech stack */
+.project-card:hover .tech-stack span,
+.experience-card:hover .tech-stack span {
+    background: var(--neon-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(255, 56, 100, 0.5);
+}
+
+/* Restore card hover effects */
+.skill-category:hover,
+.experience-card:hover,
+.project-card:hover {
+    transform: translateY(-5px);
+    background: rgba(45, 226, 230, 0.2);
+    box-shadow: 0 0 20px rgba(45, 226, 230, 0.4);
+    border-color: var(--neon-blue);
+}
+
+/* Add glitch animations back */
+@keyframes glitch-anim {
+    0% {
+        clip-path: inset(80% 0 0 0);
+    }
+    20% {
+        clip-path: inset(20% 0 60% 0);
+    }
+    40% {
+        clip-path: inset(60% 0 20% 0);
+    }
+    60% {
+        clip-path: inset(40% 0 40% 0);
+    }
+    80% {
+        clip-path: inset(0 0 80% 0);
+    }
+    100% {
+        clip-path: inset(50% 0 30% 0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip-path: inset(20% 0 60% 0);
+    }
+    20% {
+        clip-path: inset(60% 0 20% 0);
+    }
+    40% {
+        clip-path: inset(40% 0 40% 0);
+    }
+    60% {
+        clip-path: inset(80% 0 0 0);
+    }
+    80% {
+        clip-path: inset(50% 0 30% 0);
+    }
+    100% {
+        clip-path: inset(0 0 80% 0);
+    }
+}
+
+@keyframes glitch-skew {
+    0% {
+        transform: skew(0deg);
+    }
+    20% {
+        transform: skew(1deg);
+    }
+    40% {
+        transform: skew(-1deg);
+    }
+    60% {
+        transform: skew(0.5deg);
+    }
+    80% {
+        transform: skew(-0.5deg);
+    }
+    100% {
+        transform: skew(0deg);
+    }
+}
+
+.project-details {
+    margin-bottom: 1rem;
+} 

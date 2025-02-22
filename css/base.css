@@ -27,15 +27,15 @@ body {
 /* Font declarations */
 @font-face {
     font-family: 'Cyberpunk-Font-OG';
-    src: url('./fonts/Cyberpunk-Regular.woff2') format('woff2'),
-         url('./fonts/Cyberpunk-Regular.woff') format('woff');
+    src: url('../fonts/Cyberpunk-Regular.woff2') format('woff2'),
+         url('../fonts/Cyberpunk-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'BlenderProBook';
-    src: url('./fonts/blenderprobook.woff2') format('woff2');
+    src: url('../fonts/blenderprobook.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
