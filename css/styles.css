@@ -18,7 +18,7 @@
 
 body {
     background-color: var(--dark-bg);
-    color: var(-cyan);
+    color: #ffffff;
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
@@ -60,8 +60,9 @@ header {
     font-weight: 700;
     text-transform: uppercase;
     position: relative;
-    text-shadow: 0.05em 0 0 var(--neon-pink),
-                 -0.05em -0.025em 0 var(--neon-blue);
+    color: #f9f002;
+    text-shadow: 0.05em 0 0 #0ff,
+                 -0.05em -0.025em 0 #0ff;
     animation: glitch 725ms infinite;
     font-family: 'BlenderProBook', var(--font-accent);
     letter-spacing: 4px;
@@ -69,24 +70,24 @@ header {
 
 @keyframes glitch {
     0% {
-        text-shadow: 0.05em 0 0 var(--neon-pink),
-                     -0.05em -0.025em 0 var(--neon-blue);
+        text-shadow: 0.05em 0 0 #0ff,
+                     -0.05em -0.025em 0 #0ff;
     }
     15% {
-        text-shadow: -0.05em -0.025em 0 var(--neon-pink),
-                     0.025em 0.025em 0 var(--neon-blue);
+        text-shadow: -0.05em -0.025em 0 #0ff,
+                     0.025em 0.025em 0 #0ff;
     }
     49% {
-        text-shadow: -0.05em -0.025em 0 var(--neon-pink),
-                     0.025em 0.025em 0 var(--neon-blue);
+        text-shadow: -0.05em -0.025em 0 #0ff,
+                     0.025em 0.025em 0 #0ff;
     }
     50% {
-        text-shadow: 0.05em 0.025em 0 var(--neon-pink),
-                     0.05em 0 0 var(--neon-blue);
+        text-shadow: 0.05em 0.025em 0 #0ff,
+                     0.05em 0 0 #0ff;
     }
     100% {
-        text-shadow: 0.05em 0 0 var(--neon-pink),
-                     -0.05em -0.025em 0 var(--neon-blue);
+        text-shadow: 0.05em 0 0 #0ff,
+                     -0.05em -0.025em 0 #0ff;
     }
 }
 
