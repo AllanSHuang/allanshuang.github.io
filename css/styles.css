@@ -266,7 +266,7 @@ main {
 }
 
 .skill-category h3 {
-    color: var(--neon-yellow);
+    color: var(--neon-blue);
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     font-family: 'Cyberpunk-Font-OG', var(--font-display);
@@ -796,7 +796,7 @@ h1, h2, h3 {
 
 .subsection-title {
     margin-top: 3rem;
-    color: var(--neon-blue);
+    color: var(--neon-yellow);
     font-size: 1.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
