@@ -57,7 +57,9 @@
 /* About section card style */
 .about-content {
     position: relative;
-    padding: 2.5rem;
+    padding: 3.5rem;  /* Increased padding */
+    max-width: 90%;   /* Control width */
+    margin: 0 auto;   /* Center the content */
     clip-path: polygon(
         0 40px,      /* Top left start */
         20px 40px,   /* Top left razor in */
@@ -77,14 +79,21 @@
         0 calc(100% - 40px)      /* Bottom left end */
     );
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.1); /* Thicker border */
 }
 
-/* Optional: Add hover effect while keeping the shape */
+.about-text {
+    max-width: 85%;  /* Make text narrower than container */
+    margin: 0 auto;  /* Center the text */
+    text-align: justify; /* Optional: justify text */
+    line-height: 1.8; /* Increased line height for better readability */
+}
+
+/* Enhance border visibility on hover */
 .about-content:hover {
     background: rgba(45, 226, 230, 0.2);
     box-shadow: 0 0 20px rgba(45, 226, 230, 0.4);
-    border-color: var(--neon-blue);
+    border: 2px solid var(--neon-blue); /* Keep thick border on hover */
 }
 
 /* Project and Experience card details animation */
