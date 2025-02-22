@@ -601,19 +601,7 @@ h1, h2, h3 {
     background-color: var(--neon-pink);
 }
 
-.more-btn::after {
-    content: "R-25";
-    display: block;
-    position: absolute;
-    bottom: 0px;
-    right: 25px;
-    padding: 2px 2px 0px 2px;
-    font-size: 0.45rem;
-    line-height: 9px;
-    color: var(--dark-bg);
-    background-color: var(--neon-pink);
-    border-left: 2px solid var(--neon-pink);
-}
+
 
 .more-btn::before {
     --outside: 4px;
