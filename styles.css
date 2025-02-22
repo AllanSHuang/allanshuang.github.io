@@ -593,6 +593,7 @@ h1, h2, h3 {
         0 30%
     );
     transition: all 0.3s ease;
+    animation: glitch-anim 2s infinite linear alternate-reverse;
 }
 
 /* Glitch layers */
@@ -828,4 +829,68 @@ h1, h2, h3 {
     background: rgba(45, 226, 230, 0.2);
     box-shadow: 0 0 20px rgba(45, 226, 230, 0.4);
     border-color: var(--neon-blue);
+}
+
+/* Add glitch animations back */
+@keyframes glitch-anim {
+    0% {
+        clip-path: inset(80% 0 0 0);
+    }
+    20% {
+        clip-path: inset(20% 0 60% 0);
+    }
+    40% {
+        clip-path: inset(60% 0 20% 0);
+    }
+    60% {
+        clip-path: inset(40% 0 40% 0);
+    }
+    80% {
+        clip-path: inset(0 0 80% 0);
+    }
+    100% {
+        clip-path: inset(50% 0 30% 0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip-path: inset(20% 0 60% 0);
+    }
+    20% {
+        clip-path: inset(60% 0 20% 0);
+    }
+    40% {
+        clip-path: inset(40% 0 40% 0);
+    }
+    60% {
+        clip-path: inset(80% 0 0 0);
+    }
+    80% {
+        clip-path: inset(50% 0 30% 0);
+    }
+    100% {
+        clip-path: inset(0 0 80% 0);
+    }
+}
+
+@keyframes glitch-skew {
+    0% {
+        transform: skew(0deg);
+    }
+    20% {
+        transform: skew(1deg);
+    }
+    40% {
+        transform: skew(-1deg);
+    }
+    60% {
+        transform: skew(0.5deg);
+    }
+    80% {
+        transform: skew(-0.5deg);
+    }
+    100% {
+        transform: skew(0deg);
+    }
 } 
