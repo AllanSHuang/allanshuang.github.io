@@ -471,7 +471,7 @@ h1, h2, h3 {
     transform: translateY(-5px);
     background: rgba(45, 226, 230, 0.2);
     box-shadow: 0 0 20px rgba(45, 226, 230, 0.3);
-    border-color: rbga(253,63,53,1);
+    border-color: var(--neon-blue);
 }
 
 .about-text {
