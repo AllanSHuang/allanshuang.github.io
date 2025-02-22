@@ -246,7 +246,7 @@ main {
         -20px 100%,
         15px calc(100% - 0px)
     );
-    border: 2px solid var(--neon-pink);
+    border: none;
 }
 
 .skill-category li::after {
