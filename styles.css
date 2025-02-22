@@ -370,13 +370,14 @@ main {
 }
 
 .tech-stack span {
-    background: rgba(255, 56, 100, 0.15);
+    background: rgba(255, 56, 100, 0.9);
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: white;
     font-family: var(--font-display);
     letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 
 .contact-info {
@@ -461,9 +462,9 @@ h1, h2, h3 {
 
 .about-content:hover {
     transform: translateY(-5px);
-    background: rgba(255, 211, 25, 0.2);
-    box-shadow: 0 0 20px rgba(255, 211, 25, 0.3);
-    border-color: var(--neon-yellow);
+    background: rgba(45, 226, 230, 0.2);
+    box-shadow: 0 0 20px rgba(45, 226, 230, 0.3);
+    border-color: var(--neon-blue);
 }
 
 .about-text {
@@ -724,7 +725,7 @@ h1, h2, h3 {
     color: rgba(255, 255, 255, 0.95);
 }
 
-/* Add highlighting for phrases */
+/* Update highlighting for phrases */
 .highlight-phrase {
     color: var(--neon-blue);
     font-weight: 500;
@@ -732,7 +733,8 @@ h1, h2, h3 {
 }
 
 .about-content:hover .highlight-phrase {
-    color: var(--neon-yellow);
+    color: var(--neon-yellow); /* Changed to yellow on hover */
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.3); /* Add subtle glow */
 }
 
 /* Update skills section padding since we removed the main title */
@@ -793,4 +795,12 @@ h1, h2, h3 {
 .skill-category:hover h3 {
     transform: translateX(-50%) translateY(-2px);
     text-shadow: 0 0 15px rgba(255, 211, 25, 0.5);
+}
+
+/* Update hover effect for tech stack */
+.project-card:hover .tech-stack span,
+.experience-card:hover .tech-stack span {
+    background: var(--neon-pink);
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px rgba(255, 56, 100, 0.5);
 } 
