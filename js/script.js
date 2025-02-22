@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Add initial-load class to body
+    document.body.classList.add('initial-load');
+    
+    // Remove the class after animations complete
+    setTimeout(() => {
+        document.body.classList.remove('initial-load');
+    }, 3000); // Adjust time based on your longest animation + delay
+
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('nav a');
     const header = document.querySelector('header');

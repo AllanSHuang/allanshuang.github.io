@@ -1013,4 +1013,52 @@ h1, h2, h3 {
     opacity: 1;
     border: 2px solid #0ff;
     background: transparent;
+}
+
+/* Add entrance animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Initial states */
+.initial-load nav {
+    opacity: 0;
+    animation: fadeInDown 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.initial-load .glitch-container {
+    opacity: 0;
+    animation: fadeInDown 0.8s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.initial-load .subtitle {
+    opacity: 0;
+    animation: fadeInDown 0.8s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.initial-load .about-content {
+    opacity: 0;
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 1.4s;
 } 
