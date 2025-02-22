@@ -149,4 +149,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     sections.forEach(section => sectionsObserver.observe(section));
+
+    // Handle nav visibility for Experience and Projects sections
+    const experienceSection = document.getElementById('experience');
+    const projectsSection = document.getElementById('projects');
+    const nav = document.querySelector('nav');
+    
+    [experienceSection, projectsSection].forEach(section => {
+        let lastScrollTop = 0;
+        
+        section.addEventListener('scroll', () => {
+            const scrollTop = section.scrollTop;
+            
+            // Hide nav when scrolling down, show when scrolling up
+            if (scrollTop > lastScrollTop && scrollTop > 50) {
+                nav.classList.add('nav-hidden');
+            } else {
+                nav.classList.remove('nav-hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+    });
 }); 

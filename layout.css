@@ -37,6 +37,11 @@ nav {
     font-family: var(--font-display);
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-hidden {
+    transform: translateY(-100%);
 }
 
 /* Header styles */
