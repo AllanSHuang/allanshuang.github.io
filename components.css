@@ -57,9 +57,9 @@
 /* About section card style */
 .about-content {
     position: relative;
-    padding: 3.5rem;  /* Increased padding */
-    max-width: 90%;   /* Control width */
-    margin: 0 auto;   /* Center the content */
+    padding: 4rem;  /* Even padding on all sides */
+    max-width: 90%;
+    margin: 0 auto;
     clip-path: polygon(
         0 40px,      /* Top left start */
         20px 40px,   /* Top left razor in */
@@ -79,14 +79,29 @@
         0 calc(100% - 40px)      /* Bottom left end */
     );
     background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(255, 255, 255, 0.1); /* Thicker border */
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .about-text {
-    max-width: 85%;  /* Make text narrower than container */
+    max-width: 95%;  /* Slightly wider for better text flow */
     margin: 0 auto;  /* Center the text */
-    text-align: justify; /* Optional: justify text */
-    line-height: 1.8; /* Increased line height for better readability */
+    text-align: left;  /* Left alignment instead of justify */
+    line-height: 1.8;
+    padding: 1rem 0;  /* Add vertical spacing between paragraphs */
+}
+
+.about-text:first-of-type {
+    padding-top: 0;  /* Remove top padding from first paragraph */
+}
+
+.about-text:last-of-type {
+    padding-bottom: 0;  /* Remove bottom padding from last paragraph */
+}
+
+/* Style for the highlight text at the bottom */
+.about-text.highlight-text {
+    margin-top: 2rem;  /* Add extra space before the highlight text */
+    text-align: center;  /* Center the highlight text */
 }
 
 /* Enhance border visibility on hover */
