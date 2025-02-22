@@ -560,7 +560,7 @@ h1, h2, h3 {
     opacity: 1;
 }
 
-/* Update More button styling to match Cyberpunk repo exactly */
+/* Update More button size and hover opacity */
 .more-btn {
     --background-color: rgba(255, 56, 100, 0.2);
     --glitched-duration: 0.9s;
@@ -568,13 +568,13 @@ h1, h2, h3 {
     display: block;
     border: none;
     border-radius: 0;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Smaller font */
     line-height: 100%;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-weight: 600;
     font-family: var(--font-display);
-    padding: 15px 45px;
+    padding: 12px 35px; /* Smaller padding */
     margin: 10px 0;
     color: white;
     border-right: 3px solid var(--neon-pink);
@@ -589,8 +589,10 @@ h1, h2, h3 {
     );
 }
 
+/* Update hover state for 100% opacity */
 .more-btn:hover {
     animation: hover var(--glitched-duration) infinite linear;
+    background-color: var(--neon-pink); /* Full opacity on hover */
 }
 
 .more-btn::after {
@@ -600,15 +602,11 @@ h1, h2, h3 {
     bottom: 0px;
     right: 25px;
     padding: 2px 2px 0px 2px;
-    font-size: 0.6rem;
+    font-size: 0.5rem; /* Smaller R-25 text */
     line-height: 9px;
     color: var(--dark-bg);
     background-color: var(--neon-pink);
     border-left: 2px solid var(--neon-pink);
-}
-
-.more-btn:hover::after {
-    animation: hoverafter var(--glitched-duration) infinite linear;
 }
 
 .more-btn::before {
@@ -618,16 +616,18 @@ h1, h2, h3 {
     display: none;
     background-color: var(--background-color);
     width: calc(100% + (var(--outside) * 2));
-    height: 12px;
+    height: 10px; /* Slightly smaller glitch bar */
     top: 0px;
     left: calc(0px - 1px - var(--outside));
     border-left: 2px solid var(--neon-pink);
     border-right: 2px solid var(--neon-pink);
 }
 
+/* Keep the hover animations but update the background color */
 .more-btn:hover::before {
     display: block;
     animation: hoverbefore var(--glitched-duration) infinite linear;
+    background-color: var(--neon-pink); /* Full opacity on hover */
 }
 
 @keyframes hover {
