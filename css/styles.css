@@ -107,12 +107,6 @@ header {
     animation: subtitleGlitch 725ms infinite;
 }
 
-body:not(.initial-load) .subtitle {
-    text-shadow: 0.05em 0 0 var(--neon-yellow),
-                 -0.05em -0.025em 0 var(--neon-yellow);
-    animation: subtitleGlitch 725ms infinite;
-}
-
 @keyframes subtitleGlitch {
     0% {
         text-shadow: 0.05em 0 0 var(--neon-yellow),
