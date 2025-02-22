@@ -207,8 +207,8 @@ main {
 .experience-card:hover,
 .project-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 211, 25, 0.1);
-    box-shadow: 0 0 20px rgba(255, 211, 25, 0.2);
+    background: rgba(255, 211, 25, 0.2);
+    box-shadow: 0 0 20px rgba(255, 211, 25, 0.4);
     border-color: var(--neon-yellow);
 }
 
@@ -230,7 +230,7 @@ main {
 .skill-category:hover::after,
 .experience-card:hover::after,
 .project-card:hover::after {
-    box-shadow: 0 0 15px rgba(255, 211, 25, 0.3);
+    box-shadow: 0 0 15px rgba(255, 211, 25, 0.5);
 }
 
 .skill-category:hover li,
@@ -411,8 +411,20 @@ h1, h2, h3 {
 .about-content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 1rem;
-    border-radius: 15px;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    backdrop-filter: blur(5px);
+}
+
+.about-content:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 211, 25, 0.2);
+    box-shadow: 0 0 20px rgba(255, 211, 25, 0.3);
+    border-color: var(--neon-yellow);
 }
 
 .about-text {
@@ -599,11 +611,11 @@ h1, h2, h3 {
 
 .subsection-title {
     margin-top: 3rem;
-    color: var(--neon-blue);
+    color: var(--neon-yellow);
     font-size: 1.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(45, 226, 230, 0.3);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
 }
 
 /* Add this new class for scroll-based animation */
@@ -656,4 +668,19 @@ h1, h2, h3 {
 #projects h2 {
     color: var(--neon-yellow);
     text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
+}
+
+/* Update section titles to match */
+#projects h2,
+.subsection-title {
+    color: var(--neon-yellow);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
+}
+
+/* Add hover effect for about text */
+.about-content:hover .about-text {
+    color: rgba(255, 255, 255, 0.95);
 } 
