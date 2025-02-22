@@ -57,14 +57,24 @@
 /* About section card style */
 .about-content {
     position: relative;
-    padding: 2rem;
+    padding: 2.5rem;
     clip-path: polygon(
-        0 30px,     /* Top left corner */
-        30px 0,     /* Top left angle */
-        calc(100% - 30px) 0, /* Top right angle */
-        100% 30px,  /* Top right corner */
-        100% 100%,  /* Bottom right */
-        0 100%      /* Bottom left */
+        0 40px,      /* Top left start */
+        20px 40px,   /* Top left razor in */
+        40px 0,      /* Top left razor out */
+        80px 0,      /* Top left flat */
+        100px 40px,  /* Top left second razor */
+        calc(100% - 100px) 40px, /* Top right start */
+        calc(100% - 80px) 0,     /* Top right razor in */
+        calc(100% - 40px) 0,     /* Top right flat */
+        calc(100% - 20px) 40px,  /* Top right razor out */
+        100% 40px,   /* Top right end */
+        100% calc(100% - 40px),  /* Bottom right start */
+        calc(100% - 20px) calc(100% - 40px), /* Bottom right razor in */
+        calc(100% - 40px) 100%,  /* Bottom right razor out */
+        40px 100%,   /* Bottom left flat */
+        20px calc(100% - 40px),  /* Bottom left razor */
+        0 calc(100% - 40px)      /* Bottom left end */
     );
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -115,4 +125,23 @@
     background: rgba(45, 226, 230, 0.2);
     box-shadow: 0 0 20px rgba(45, 226, 230, 0.4);
     border-color: var(--neon-blue);
+}
+
+/* Fix for long category titles */
+.skill-category h3 {
+    position: absolute;
+    top: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    font-size: 1rem; /* Smaller font size */
+    width: 90%; /* Allow more width */
+    text-align: center;
+}
+
+/* Specific fix for Office & Collaboration */
+.skill-category h3:contains("Office & Collaboration") {
+    font-size: 0.9rem; /* Even smaller for this specific title */
+    letter-spacing: 1px; /* Reduce letter spacing */
 } 
