@@ -693,4 +693,35 @@ h1, h2, h3 {
 
 .about-content:hover .highlight-phrase {
     color: var(--neon-yellow);
+}
+
+/* Update skills section padding since we removed the main title */
+#skills {
+    padding-top: 8rem !important; /* Adjust this value as needed */
+}
+
+/* Update skill category styling */
+.skill-category {
+    padding: 2rem 1.5rem 1.5rem;
+    position: relative;
+}
+
+.skill-category h3 {
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark-bg);
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    white-space: nowrap;
+    border: 1px solid var(--neon-yellow);
+    box-shadow: 0 0 10px rgba(255, 211, 25, 0.2);
+}
+
+/* Adjust hover effect for titles */
+.skill-category:hover h3 {
+    box-shadow: 0 0 15px rgba(255, 211, 25, 0.4);
+    transform: translateX(-50%) translateY(-2px);
+    transition: all 0.3s ease;
 } 
