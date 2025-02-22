@@ -77,6 +77,13 @@ header {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'BlenderProBook';
+    src: url('./fonts/blenderprobook.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .glitch {
     font-size: 4rem;
     font-weight: 700;
@@ -85,7 +92,7 @@ header {
     text-shadow: 0.05em 0 0 var(--neon-pink),
                  -0.05em -0.025em 0 var(--neon-blue);
     animation: glitch 725ms infinite;
-    font-family: 'Oxanium', var(--font-accent);
+    font-family: 'BlenderProBook', var(--font-accent);
     letter-spacing: 4px;
 }
 
@@ -117,7 +124,7 @@ header {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     color: var(--neon-blue);
-    font-family: "Advent Pro", sans-serif;
+    font-family: 'Cyberpunk', sans-serif;
     letter-spacing: 2px;
     text-transform: uppercase;
     animation: subtleGlow 1.5s ease-in-out infinite alternate;
