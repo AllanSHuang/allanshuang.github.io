@@ -224,38 +224,20 @@ main {
 .skill-category ul {
     list-style: none;
     text-align: center;
+    padding: 0 1rem;
 }
 
 .skill-category li {
-    margin: 0.8rem 0;
+    margin: 0.8rem auto;
     padding: 0.5rem 1rem;
     position: relative;
     font-size: 1.1rem;
     transition: all 0.3s ease;
     opacity: 0;
     cursor: pointer;
-    z-index: 1;
-}
-
-.skill-category li::before {
-    display: none;
-}
-
-.skill-category li:hover {
-    color: #000;
-    font-weight: 600;
-}
-
-.skill-category li::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: 2px solid #0ff;
-    opacity: 0;
+    background: rgba(255, 56, 100, 0.2);
+    width: 80%;
+    color: white;
     clip-path: polygon(
         15px 0%,
         calc(100% - 15px) 0%,
@@ -264,15 +246,19 @@ main {
         -20px 100%,
         15px calc(100% - 0px)
     );
-    transition: all 0.3s ease;
-    pointer-events: none;
-    z-index: -1;
+    border: 2px solid var(--neon-pink);
 }
 
-.skill-category li:hover::after {
-    opacity: 1;
-    border: 2px solid #0ff;
-    background-color: #0ff;
+.skill-category li::after {
+    display: none;
+}
+
+.skill-category li:hover {
+    color: black;
+    font-weight: 600;
+    background: #0ff;
+    border-color: #0ff;
+    transform: translateY(-2px);
 }
 
 /* Add a subtle animation for the skills grid */
