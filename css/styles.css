@@ -630,7 +630,15 @@ main {
 
 .skill-category li:hover {
 
-    color: var(--neon-yellow);
+    color: black;
+
+    font-weight: 600;
+
+    background: #0ff;
+
+    border-color: #0ff;
+
+    transform: translateY(-2px);
 
 }
 
