@@ -79,7 +79,7 @@
         0 calc(100% - 40px)      /* Bottom left end */
     );
     background: rgba(255, 255, 255, 0.05);
-    border: 4px solid rgba(241, 8, 8, 0.626);
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .about-text {
@@ -111,20 +111,37 @@
     border: 2px solid var(--neon-blue); /* Keep thick border on hover */
 }
 
-/* Project and Experience card details animation */
+/* Project and Experience details animations */
 .project-details,
 .experience-details {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-out;
     opacity: 0;
+    transition: max-height 0.5s ease-out, 
+                opacity 0.3s ease-out,
+                transform 0.5s ease-out;
+    transform: translateY(20px);
 }
 
 .project-details.visible,
 .experience-details.visible {
     max-height: 500px;
     opacity: 1;
-    transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
+    transform: translateY(0);
+    transition: max-height 0.5s ease-in,
+                opacity 0.3s ease-in,
+                transform 0.5s ease-in;
+}
+
+/* When hiding, animate up */
+.project-details.expanded:not(.visible),
+.experience-details.expanded:not(.visible) {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: max-height 0.5s ease-out,
+                opacity 0.3s ease-out,
+                transform 0.5s ease-out;
 }
 
 /* Skill category card style */

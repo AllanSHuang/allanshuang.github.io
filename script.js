@@ -161,10 +161,10 @@ document.addEventListener('DOMContentLoaded', () => {
         section.addEventListener('scroll', () => {
             const scrollTop = section.scrollTop;
             
-            // Hide nav when scrolling down, show when scrolling up
-            if (scrollTop > lastScrollTop && scrollTop > 50) {
+            // Only show nav when completely at top, hide when scrolling down
+            if (scrollTop > 0) {
                 nav.classList.add('nav-hidden');
-            } else {
+            } else if (scrollTop === 0) {
                 nav.classList.remove('nav-hidden');
             }
             
