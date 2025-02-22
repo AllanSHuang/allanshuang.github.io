@@ -27,4 +27,48 @@
 /* More button styles */
 .more-btn {
     /* Your more button styles */
+}
+
+/* Project card layout */
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card .tech-stack {
+    order: 2; /* Move tech stack before More button */
+    margin-bottom: 1rem;
+}
+
+.project-card .project-details {
+    order: 1; /* Keep details before tech stack */
+}
+
+.project-card .more-btn {
+    order: 3; /* Move More button to the end */
+    align-self: flex-start; /* Align button to the left */
+    margin-top: 0; /* Remove top margin since tech stack has margin-bottom */
+}
+
+/* About section card style */
+.about-content {
+    position: relative;
+    padding: 2rem;
+    clip-path: polygon(
+        0 30px,     /* Top left corner */
+        30px 0,     /* Top left angle */
+        calc(100% - 30px) 0, /* Top right angle */
+        100% 30px,  /* Top right corner */
+        100% 100%,  /* Bottom right */
+        0 100%      /* Bottom left */
+    );
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Optional: Add hover effect while keeping the shape */
+.about-content:hover {
+    background: rgba(45, 226, 230, 0.2);
+    box-shadow: 0 0 20px rgba(45, 226, 230, 0.4);
+    border-color: var(--neon-blue);
 } 
