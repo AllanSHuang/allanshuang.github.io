@@ -117,31 +117,33 @@
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.5s ease-out, 
-                opacity 0.3s ease-out,
-                transform 0.5s ease-out;
     transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Showing animation */
 .project-details.visible,
 .experience-details.visible {
     max-height: 500px;
     opacity: 1;
     transform: translateY(0);
-    transition: max-height 0.5s ease-in,
-                opacity 0.3s ease-in,
-                transform 0.5s ease-in;
 }
 
-/* When hiding, animate up */
+/* Hiding animation */
+.project-details.expanded,
+.experience-details.expanded {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fade out animation when hiding */
 .project-details.expanded:not(.visible),
 .experience-details.expanded:not(.visible) {
     max-height: 0;
     opacity: 0;
     transform: translateY(-20px);
-    transition: max-height 0.5s ease-out,
-                opacity 0.3s ease-out,
-                transform 0.5s ease-out;
+    pointer-events: none; /* Prevent interaction during animation */
 }
 
 /* Skill category card style */
