@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Remove the class after animations complete
     setTimeout(() => {
         document.body.classList.remove('initial-load');
-    }, 3000); // Adjust time based on your longest animation + delay
+    }, 3500); // Increased to account for all animations
 
     const sections = document.querySelectorAll('.section');
     const navLinks = document.querySelectorAll('nav a');

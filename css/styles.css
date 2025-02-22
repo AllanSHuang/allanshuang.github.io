@@ -1061,4 +1061,98 @@ h1, h2, h3 {
     opacity: 0;
     animation: fadeInUp 1s ease-out forwards;
     animation-delay: 1.4s;
+}
+
+/* Update entrance animations */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Initial states */
+.initial-load .glitch-container {
+    opacity: 0;
+    animation: slideInLeft 1s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.initial-load .subtitle {
+    opacity: 0;
+    animation: slideInRight 1s ease-out forwards;
+    animation-delay: 0.6s;
+}
+
+.initial-load .about-content {
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-out forwards;
+    animation-delay: 1s;
+}
+
+/* Nav items drop down one by one */
+.initial-load nav li {
+    opacity: 0;
+}
+
+.initial-load nav li:nth-child(1) {
+    animation: dropDown 0.6s ease-out forwards;
+    animation-delay: 1.4s;
+}
+
+.initial-load nav li:nth-child(2) {
+    animation: dropDown 0.6s ease-out forwards;
+    animation-delay: 1.6s;
+}
+
+.initial-load nav li:nth-child(3) {
+    animation: dropDown 0.6s ease-out forwards;
+    animation-delay: 1.8s;
+}
+
+.initial-load nav li:nth-child(4) {
+    animation: dropDown 0.6s ease-out forwards;
+    animation-delay: 2.0s;
+}
+
+.initial-load nav li:nth-child(5) {
+    animation: dropDown 0.6s ease-out forwards;
+    animation-delay: 2.2s;
 } 
