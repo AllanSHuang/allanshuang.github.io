@@ -170,18 +170,4 @@ document.addEventListener('DOMContentLoaded', () => {
             lastScrollTop = scrollTop;
         });
     });
-
-    // Add header scroll animation for About section
-    const aboutSection = document.getElementById('about');
-    const header = document.querySelector('header');
-    
-    aboutSection.addEventListener('scroll', () => {
-        const scrollTop = aboutSection.scrollTop;
-        
-        if (scrollTop > 0) {
-            header.classList.add('header-scroll-hidden');
-        } else {
-            header.classList.remove('header-scroll-hidden');
-        }
-    });
 }); 
