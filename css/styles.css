@@ -64,7 +64,7 @@ header {
     color: #f9f002;
     text-shadow: 0.05em 0 0 #0ff,
                  -0.05em -0.025em 0 #0ff;
-    animation: glitch 725ms infinite;
+    animation: glitch 0ms infinite;
     font-family: 'BlenderProBook', var(--font-accent);
     letter-spacing: 4px;
 }
