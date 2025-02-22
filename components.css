@@ -1,0 +1,30 @@
+/* Cards */
+.skill-category,
+.experience-card,
+.project-card,
+.about-content {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+/* Tech stack tags */
+.tech-stack {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tech-stack span {
+    /* Your tech stack styles */
+}
+
+/* More button styles */
+.more-btn {
+    /* Your more button styles */
+} 

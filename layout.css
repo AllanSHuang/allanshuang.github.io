@@ -1,0 +1,51 @@
+.page-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.sections-container {
+    display: flex;
+    width: 500%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.section {
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    overflow-y: scroll;
+    padding: 2rem;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    position: relative;
+    padding-top: 20rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Navigation styles */
+nav {
+    background: transparent;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Header styles */
+header {
+    padding: 4rem 2rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+} 

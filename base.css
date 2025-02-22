@@ -1,0 +1,47 @@
+:root {
+    --neon-yellow: #ffd319;
+    --neon-purple: #b829f7;
+    --neon-blue: #2de2e6;
+    --neon-pink: #ff3864;
+    --dark-bg: #0a0a16;
+    --cyber-gradient: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Chakra Petch', sans-serif;
+    --font-accent: 'Russo One', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: #ffffff;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Font declarations */
+@font-face {
+    font-family: 'Cyberpunk-Font-OG';
+    src: url('./fonts/Cyberpunk-Regular.woff2') format('woff2'),
+         url('./fonts/Cyberpunk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BlenderProBook';
+    src: url('./fonts/blenderprobook.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Basic element styles */
+h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: 2px;
+} 
