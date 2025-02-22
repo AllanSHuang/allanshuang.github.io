@@ -297,7 +297,7 @@ main {
     cursor: pointer;
     background: transparent;
     width: 80%;
-    color: var(--neon-yellow);
+    color: var(--neon-blue);
     clip-path: polygon(
         15px 0%,
         calc(100% - 15px) 0%,
