@@ -121,17 +121,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Modify the scroll handler for About section
     const aboutSection = document.getElementById('about');
-
+    const nav = document.querySelector('nav');
+    let lastScrollTop = 0;
+    
     aboutSection.addEventListener('scroll', () => {
         const scrollTop = aboutSection.scrollTop;
-        const header = document.querySelector('header');
         
-        // Hide header immediately when scrolling down
+        // Only show nav when completely at top, hide when scrolling down
         if (scrollTop > 0) {
-            header.classList.add('header-scroll-hidden');
-        } else {
-            header.classList.remove('header-scroll-hidden');
+            nav.classList.add('nav-hidden');
+        } else if (scrollTop === 0) {
+            nav.classList.remove('nav-hidden');
         }
+        
+        lastScrollTop = scrollTop;
     });
 
     let lastScrollY = window.scrollY;
