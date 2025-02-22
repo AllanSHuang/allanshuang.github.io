@@ -253,14 +253,15 @@ main {
     width: 100%;
     height: 100%;
     background: transparent;
-    border: 2px solid var(--neon-pink);
+    border: 2px solid #0ff;
     opacity: 0;
     clip-path: polygon(
-        -15px 0%,
-        calc(100% + 15px) 0%,
+        15px 0%,
+        calc(100% - 15px) 0%,
+        calc(100% + 15px) 35px,
         calc(100% + 15px) 100%,
-        20px 100%,
-        -15px calc(100% - 35px)
+        -20px 100%,
+        15px calc(100% - 0px)
     );
     transition: all 0.3s ease;
     pointer-events: none;
@@ -268,7 +269,8 @@ main {
 
 .skill-category li:hover::after {
     opacity: 1;
-    background: rgba(255, 56, 100, 0.1);
+    border: 2px solid #0ff;
+    background: transparent;
 }
 
 /* Add a subtle animation for the skills grid */
@@ -976,4 +978,41 @@ h1, h2, h3 {
 
 .project-details {
     margin-bottom: 1rem;
+}
+
+/* Update skill category hover effect to neon pink */
+.skill-category:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 56, 100, 0.2); /* Changed to neon pink with opacity */
+    box-shadow: 0 0 20px rgba(255, 56, 100, 0.4); /* Changed shadow to match */
+    border-color: var(--neon-pink);
+}
+
+/* Update the cyberpunk frame for skills with horizontal flip and blue color */
+.skill-category li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid #0ff; /* Changed to cyberpunk blue */
+    opacity: 0;
+    clip-path: polygon(
+        15px 0%,                  /* Flipped top left */
+        calc(100% - 15px) 0%,    /* Flipped top right */
+        calc(100% + 15px) 35px,  /* Flipped top right angle */
+        calc(100% + 15px) 100%,  /* Flipped right edge */
+        -20px 100%,              /* Flipped bottom left */
+        15px calc(100% - 0px)    /* Flipped bottom left angle */
+    );
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.skill-category li:hover::after {
+    opacity: 1;
+    border: 2px solid #0ff; /* Keep border blue and fully opaque */
+    background: transparent; /* Remove background color */
 } 
