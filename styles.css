@@ -199,8 +199,8 @@ main {
 .project-card,
 .about-content {
     position: relative;
-    border: none;
     background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
 }
@@ -220,27 +220,26 @@ main {
 .about-content::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 1px solid transparent;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
     border-radius: 10px;
-    background: linear-gradient(45deg, 
-        transparent 20%, 
-        var(--neon-yellow) 40%,
-        var(--neon-blue) 60%,
-        var(--neon-pink) 80%,
-        transparent 100%
+    background: linear-gradient(215deg,
+        transparent 30%,
+        var(--neon-blue) 46%,
+        var(--neon-blue) 54%,
+        transparent 70%
     );
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
     opacity: 0;
     transition: all 0.3s ease;
+    pointer-events: none;
+    clip-path: polygon(
+        0 15%, 15% 15%, 15% 0,   /* Top left */
+        85% 0, 85% 15%, 100% 15%, /* Top right */
+        100% 85%, 85% 85%, 85% 100%, /* Bottom right */
+        15% 100%, 15% 85%, 0 85%  /* Bottom left */
+    );
 }
 
 .skill-category:hover::before,
@@ -248,20 +247,17 @@ main {
 .project-card:hover::before,
 .about-content:hover::before {
     opacity: 1;
-    animation: borderRotate 4s linear infinite;
-    background-size: 400% 400%;
-    filter: drop-shadow(0 0 8px var(--neon-blue));
+    animation: borderPulse 2s infinite;
 }
 
-@keyframes borderRotate {
-    0% {
-        background-position: 0% 0%;
+@keyframes borderPulse {
+    0%, 100% {
+        opacity: 0.5;
+        filter: brightness(1);
     }
     50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
+        opacity: 1;
+        filter: brightness(1.3);
     }
 }
 
