@@ -96,7 +96,7 @@ header {
     font-size: 1.3rem;
     margin-top: 1rem;
     margin-bottom: 0.2rem;
-    color: var(--neon-purple);
+    color: var(--neon-pink);
     font-family: 'BlenderProBook', var(--font-accent);
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -106,31 +106,31 @@ header {
 
 /* Remove the old animation and add the glitch effect */
 .subtitle:not(.initial-load .subtitle) {
-    text-shadow: 0.05em 0 0 #0ff,
-                 -0.05em -0.025em 0 #0ff;
+    text-shadow: 0.05em 0 0 var(--neon-blue),
+                 -0.05em -0.025em 0 var(--neon-blue);
     animation: subtitleGlitch 725ms infinite;
 }
 
 @keyframes subtitleGlitch {
     0% {
-        text-shadow: 0.05em 0 0 #0ff,
-                     -0.05em -0.025em 0 #0ff;
+        text-shadow: 0.05em 0 0 var(--neon-blue),
+                     -0.05em -0.025em 0 var(--neon-blue);
     }
     15% {
-        text-shadow: -0.05em -0.025em 0 #0ff,
-                     0.025em 0.025em 0 #0ff;
+        text-shadow: -0.05em -0.025em 0 var(--neon-blue),
+                     0.025em 0.025em 0 var(--neon-blue);
     }
     49% {
-        text-shadow: -0.05em -0.025em 0 #0ff,
-                     0.025em 0.025em 0 #0ff;
+        text-shadow: -0.05em -0.025em 0 var(--neon-blue),
+                     0.025em 0.025em 0 var(--neon-blue);
     }
     50% {
-        text-shadow: 0.05em 0.025em 0 #0ff,
-                     0.05em 0 0 #0ff;
+        text-shadow: 0.05em 0.025em 0 var(--neon-blue),
+                     0.05em 0 0 var(--neon-blue);
     }
     100% {
-        text-shadow: 0.05em 0 0 #0ff,
-                     -0.05em -0.025em 0 #0ff;
+        text-shadow: 0.05em 0 0 var(--neon-blue),
+                     -0.05em -0.025em 0 var(--neon-blue);
     }
 }
 
@@ -188,7 +188,6 @@ nav a {
     transition: all 0.3s;
     padding: 0.5rem 1rem;
     position: relative;
-    z-index: 1;
 }
 
 nav a::before {
@@ -209,6 +208,7 @@ nav a::before {
     );
     transition: all 0.3s ease;
     z-index: -1;
+    opacity: 0;
 }
 
 nav a:hover {
@@ -216,7 +216,8 @@ nav a:hover {
 }
 
 nav a:hover::before {
-    background: #0ff;
+    background: var(--neon-blue);
+    opacity: 1;
 }
 
 nav a.active {
