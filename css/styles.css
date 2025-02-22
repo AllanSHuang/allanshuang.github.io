@@ -104,7 +104,7 @@ header {
     position: relative;
     text-shadow: 0.05em 0 0 var(--neon-yellow),
                  -0.05em -0.025em 0 var(--neon-yellow);
-    animation: subtitleGlitch 725ms infinite;
+    animation: subtitleGlitch 0ms infinite;
 }
 
 @keyframes subtitleGlitch {
