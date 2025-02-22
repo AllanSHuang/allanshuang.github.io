@@ -1034,7 +1034,7 @@ h1, h2, h3 {
 /* Update skill category hover effect to neon pink */
 .skill-category:hover {
     transform: translateY(-5px);
-    background: rgba(255, 56, 100, 0.2);
+    background: var(--neon-blue);
     box-shadow: 0 0 20px rgba(255, 56, 100, 0.4);
     border-color: var(--neon-pink);
 }
