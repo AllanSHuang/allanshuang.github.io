@@ -617,9 +617,10 @@ h1, h2, h3 {
     );
 }
 
-/* Update hover state for 100% opacity */
-.more-btn:hover {
-    animation: hover var(--glitched-duration) infinite linear;
+/* Change text color to dark pink on hover */
+.more-btn:hover,
+.more-btn.active {
+    color: #2a0a12; /* Dark pink when hovering or active */
     background-color: rgba(0, 255, 255, 0.9);
 }
 
