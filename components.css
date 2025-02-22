@@ -192,4 +192,25 @@
 .skill-category h3:contains("Office & Collaboration") {
     font-size: 0.9rem; /* Even smaller for this specific title */
     letter-spacing: 1px; /* Reduce letter spacing */
+}
+
+/* Project card specific animations */
+.project-card .project-details {
+    margin: 1rem 0;
+    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1); /* Slower fade-in for projects */
+}
+
+.project-card .project-details.visible {
+    max-height: 1000px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card .project-details.expanded:not(.visible) {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Keep fade-out speed */
+    pointer-events: none;
 } 
