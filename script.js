@@ -64,14 +64,28 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks[0].classList.add('active');
     header.classList.add('header-visible');
 
-    // Add More button functionality
+    // Add More button functionality for both Experience and Project sections
     document.querySelectorAll('.more-btn').forEach(button => {
         button.addEventListener('click', () => {
             const details = button.previousElementSibling;
             const isExpanded = details.classList.contains('expanded');
             
-            details.classList.toggle('expanded');
-            details.classList.toggle('visible');
+            // First add expanded class to enable animation
+            if (!isExpanded) {
+                details.classList.add('expanded');
+                // Small delay to trigger the animation
+                setTimeout(() => {
+                    details.classList.add('visible');
+                }, 10);
+            } else {
+                // Remove visible first to trigger fade out
+                details.classList.remove('visible');
+                // Wait for animation to complete before removing expanded
+                setTimeout(() => {
+                    details.classList.remove('expanded');
+                }, 500);
+            }
+            
             button.textContent = isExpanded ? 'More' : 'Less';
             button.classList.toggle('active');
         });
