@@ -95,7 +95,7 @@ header {
 .subtitle {
     font-size: 1.3rem;
     margin-top: 1rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     color: var(--neon-blue);
     font-family: 'BlenderProBook', var(--font-accent);
     letter-spacing: 2px;
