@@ -138,8 +138,7 @@ header {
 }
 
 nav {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    background: rgba(10, 10, 22, 0.7);
     padding: 1rem;
     position: fixed;
     top: 0;
@@ -564,7 +563,7 @@ h1, h2, h3 {
 .more-btn {
     position: relative;
     background: transparent;
-    color: white;
+    color: white !important;
     border: none;
     padding: 0.5rem 1.5rem;
     font-family: var(--font-display);
@@ -580,31 +579,109 @@ h1, h2, h3 {
         0 100%,
         0 30%
     );
+    animation: glitch-skew 1s infinite linear alternate-reverse;
 }
 
-.more-btn::before {
-    content: '';
+.more-btn::before,
+.more-btn::after {
+    content: 'More';
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--neon-pink);
-    opacity: 0.2;
-    transition: all 0.3s ease;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(
+        10% 0,
+        100% 0,
+        100% 70%,
+        90% 100%,
+        0 100%,
+        0 30%
+    );
+}
+
+.more-btn::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--neon-blue);
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.more-btn::after {
+    left: -2px;
+    text-shadow: 2px 0 var(--neon-pink);
+    animation: glitch-anim2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% {
+        clip-path: inset(80% 0 0 0);
+    }
+    20% {
+        clip-path: inset(20% 0 60% 0);
+    }
+    40% {
+        clip-path: inset(60% 0 20% 0);
+    }
+    60% {
+        clip-path: inset(40% 0 40% 0);
+    }
+    80% {
+        clip-path: inset(0 0 80% 0);
+    }
+    100% {
+        clip-path: inset(50% 0 30% 0);
+    }
+}
+
+@keyframes glitch-anim2 {
+    0% {
+        clip-path: inset(20% 0 60% 0);
+    }
+    20% {
+        clip-path: inset(60% 0 20% 0);
+    }
+    40% {
+        clip-path: inset(40% 0 40% 0);
+    }
+    60% {
+        clip-path: inset(80% 0 0 0);
+    }
+    80% {
+        clip-path: inset(50% 0 30% 0);
+    }
+    100% {
+        clip-path: inset(0 0 80% 0);
+    }
+}
+
+@keyframes glitch-skew {
+    0% {
+        transform: skew(0deg);
+    }
+    20% {
+        transform: skew(1deg);
+    }
+    40% {
+        transform: skew(-1deg);
+    }
+    60% {
+        transform: skew(0.5deg);
+    }
+    80% {
+        transform: skew(-0.5deg);
+    }
+    100% {
+        transform: skew(0deg);
+    }
 }
 
 .more-btn:hover::before {
     opacity: 1;
 }
 
+.more-btn:hover,
 .more-btn.active {
-    background: var(--neon-pink);
-    color: white;
-}
-
-.more-btn:hover {
-    color: white;
+    color: white !important;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
