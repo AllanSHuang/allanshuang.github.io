@@ -443,7 +443,7 @@ h1, h2, h3 {
     padding: 1.5rem;
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.05);
-    border: 3px solid rgba(255, 255, 255, 0.1);
+    border: 15px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     position: relative;
     backdrop-filter: blur(5px);
@@ -453,7 +453,7 @@ h1, h2, h3 {
     transform: translateY(-5px);
     background: rgba(45, 226, 230, 0.2);
     box-shadow: 0 0 20px rgba(45, 226, 230, 0.3);
-    border: 3px solid var(--neon-blue);
+    border: 15px solid var(--neon-blue);
 }
 
 .about-text {
@@ -604,7 +604,7 @@ h1, h2, h3 {
     font-family: var(--font-display);
     padding: 8px 25px;
     margin: 20px 0 5px 0;
-    color: white;
+    color: #2a0a12;
     border-right: 3px solid #0ff;
     background-color: var(--background-color);
     cursor: pointer;
