@@ -55,35 +55,6 @@ header {
     display: inline-block;
 }
 
-@font-face {
-    font-family: 'Cyberpunk-Font-OG';
-    src: url('../fonts/Cyberpunk-Regular.woff2') format('woff2'),
-         url('../fonts/Cyberpunk-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Cyberpunk';
-    src: url('../fonts/Cyberpunk.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Oxanium';
-    src: url('../fonts/oxanium.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'BlenderProBook';
-    src: url('../fonts/blenderprobook.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
 .glitch {
     font-size: 4rem;
     font-weight: 700;

@@ -24,13 +24,14 @@ body {
     overflow-x: hidden;
 }
 
-/* Font declarations */
+/* Font declarations - only for the fonts you actually have */
 @font-face {
     font-family: 'Cyberpunk-Font-OG';
     src: url('../fonts/Cyberpunk-Regular.woff2') format('woff2'),
          url('../fonts/Cyberpunk-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -38,7 +39,10 @@ body {
     src: url('../fonts/blenderprobook.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
+
+/* Remove Oxanium if you're not using it */
 
 /* Basic element styles */
 h1, h2, h3 {
