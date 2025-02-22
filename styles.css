@@ -55,6 +55,14 @@ header {
     display: inline-block;
 }
 
+@font-face {
+    font-family: 'Cyberpunk-Font-OG';
+    src: url('./fonts/Cyberpunk-Regular.woff2') format('woff2'),
+         url('./fonts/Cyberpunk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .glitch {
     font-size: 4rem;
     font-weight: 700;
@@ -63,7 +71,7 @@ header {
     text-shadow: 0.05em 0 0 var(--neon-pink),
                  -0.05em -0.025em 0 var(--neon-blue);
     animation: glitch 725ms infinite;
-    font-family: "Advent Pro", sans-serif;
+    font-family: 'Cyberpunk-Font-OG', var(--font-accent);
     letter-spacing: 4px;
 }
 
@@ -208,7 +216,7 @@ main {
     color: var(--neon-yellow);
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
-    font-family: var(--font-display);
+    font-family: 'Cyberpunk-Font-OG', var(--font-display);
     letter-spacing: 2px;
     text-transform: uppercase;
     text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
@@ -316,6 +324,7 @@ main {
 
 .experience-card h3 {
     letter-spacing: 1px;
+    font-family: 'Cyberpunk-Font-OG', var(--font-display);
 }
 
 .tech-stack {
@@ -723,6 +732,7 @@ h1, h2, h3 {
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
+    font-family: 'Cyberpunk-Font-OG', var(--font-display);
 }
 
 /* Add this new class for scroll-based animation */
@@ -759,6 +769,7 @@ h1, h2, h3 {
     color: var(--neon-blue);
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
+    font-family: 'Cyberpunk-Font-OG', var(--font-display);
 }
 
 .project-card .project-brief {
