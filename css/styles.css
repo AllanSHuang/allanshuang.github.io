@@ -509,11 +509,18 @@ h1, h2, h3 {
     backdrop-filter: blur(5px);
 }
 
-.about-content:hover {
+/* Add scroll-active class for scroll effect */
+.about-content.scroll-active {
     transform: translateY(-5px);
     background: rgba(45, 226, 230, 0.2);
     box-shadow: 0 0 20px rgba(45, 226, 230, 0.3);
     border: 15px solid var(--neon-blue);
+}
+
+/* Update highlight phrases for scroll effect */
+.about-content.scroll-active .highlight-phrase {
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.3);
 }
 
 .about-text {
