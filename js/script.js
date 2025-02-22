@@ -119,10 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Modify the scroll handler for About section
+    // Add scroll handler for About section
     const aboutSection = document.getElementById('about');
     const nav = document.querySelector('nav');
-    let lastScrollTop = 0;
     
     aboutSection.addEventListener('scroll', () => {
         const scrollTop = aboutSection.scrollTop;
@@ -133,8 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (scrollTop === 0) {
             nav.classList.remove('nav-hidden');
         }
-        
-        lastScrollTop = scrollTop;
     });
 
     let lastScrollY = window.scrollY;
