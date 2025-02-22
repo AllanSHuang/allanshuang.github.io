@@ -63,7 +63,7 @@ header {
     text-shadow: 0.05em 0 0 var(--neon-pink),
                  -0.05em -0.025em 0 var(--neon-blue);
     animation: glitch 725ms infinite;
-    font-family: var(--font-accent);
+    font-family: "Advent Pro", sans-serif;
     letter-spacing: 4px;
 }
 
@@ -95,7 +95,7 @@ header {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     color: var(--neon-blue);
-    font-family: var(--font-display);
+    font-family: "Advent Pro", sans-serif;
     letter-spacing: 2px;
     text-transform: uppercase;
     animation: subtleGlow 1.5s ease-in-out infinite alternate;
