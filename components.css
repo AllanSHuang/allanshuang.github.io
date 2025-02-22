@@ -35,19 +35,23 @@
     flex-direction: column;
 }
 
-.project-card .tech-stack {
-    order: 2; /* Move tech stack before More button */
-    margin-bottom: 1rem;
+.project-card .project-brief {
+    order: 1;
 }
 
 .project-card .project-details {
-    order: 1; /* Keep details before tech stack */
+    order: 2;
+    margin: 1rem 0;
+}
+
+.project-card .tech-stack {
+    order: 3;
+    margin-bottom: 1rem;
 }
 
 .project-card .more-btn {
-    order: 3; /* Move More button to the end */
-    align-self: flex-start; /* Align button to the left */
-    margin-top: 0; /* Remove top margin since tech stack has margin-bottom */
+    order: 4;
+    align-self: flex-start;
 }
 
 /* About section card style */
@@ -68,6 +72,46 @@
 
 /* Optional: Add hover effect while keeping the shape */
 .about-content:hover {
+    background: rgba(45, 226, 230, 0.2);
+    box-shadow: 0 0 20px rgba(45, 226, 230, 0.4);
+    border-color: var(--neon-blue);
+}
+
+/* Project and Experience card details animation */
+.project-details,
+.experience-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    opacity: 0;
+}
+
+.project-details.visible,
+.experience-details.visible {
+    max-height: 500px;
+    opacity: 1;
+    transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
+}
+
+/* Skill category card style */
+.skill-category {
+    position: relative;
+    padding: 3rem 1.5rem 1.5rem;
+    clip-path: polygon(
+        0 30px,     /* Top left corner */
+        30px 0,     /* Top left angle */
+        calc(100% - 30px) 0, /* Top right angle */
+        100% 30px,  /* Top right corner */
+        100% 100%,  /* Bottom right */
+        0 100%      /* Bottom left */
+    );
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+}
+
+/* Keep the hover effect */
+.skill-category:hover {
     background: rgba(45, 226, 230, 0.2);
     box-shadow: 0 0 20px rgba(45, 226, 230, 0.4);
     border-color: var(--neon-blue);
