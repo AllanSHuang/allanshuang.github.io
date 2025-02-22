@@ -57,7 +57,7 @@
 /* About section card style */
 .about-content {
     position: relative;
-    padding: 4rem;  /* Even padding on all sides */
+    padding: 5rem 4rem;  /* Increased top/bottom padding for even spacing */
     max-width: 90%;
     margin: 0 auto;
     clip-path: polygon(
@@ -83,19 +83,19 @@
 }
 
 .about-text {
-    max-width: 95%;  /* Slightly wider for better text flow */
-    margin: 0 auto;  /* Center the text */
-    text-align: left;  /* Left alignment instead of justify */
+    max-width: 95%;
+    margin: 0 auto;
+    text-align: center;  /* Center alignment */
     line-height: 1.8;
-    padding: 1rem 0;  /* Add vertical spacing between paragraphs */
+    padding: 1.5rem 0;  /* Increased padding between paragraphs */
 }
 
 .about-text:first-of-type {
-    padding-top: 0;  /* Remove top padding from first paragraph */
+    padding-top: 0;
 }
 
 .about-text:last-of-type {
-    padding-bottom: 0;  /* Remove bottom padding from last paragraph */
+    padding-bottom: 0;
 }
 
 /* Style for the highlight text at the bottom */
