@@ -730,7 +730,7 @@ h1, h2, h3 {
     border-radius: 10px;
     margin: 1.5rem 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
+    transition: transform 0.8s ease, opacity 0.8s ease;
     opacity: 0;
     transform: translateY(50px);
 }
@@ -1061,7 +1061,7 @@ h1, h2, h3 {
 .experience-card {
     opacity: 0;
     transform: translateX(50px);
-    transition: all 0.4s ease; 
+    transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 .section.active .experience-card {
@@ -1085,7 +1085,7 @@ h1, h2, h3 {
 .project-card {
     opacity: 0;
     transform: translateY(50px);
-    transition: all 0.8s ease; /* Increased duration from 0.5s to 0.8s */
+    transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
 /* Project section title animation */
