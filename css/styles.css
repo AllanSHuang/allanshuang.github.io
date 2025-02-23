@@ -350,6 +350,7 @@ main {
     /* Quick response for hover effects */
     transition: transform 0.3s ease;
 }
+
 .experience-card h3 {
     letter-spacing: 1px;
     font-family: 'Cyberpunk-Font-OG', var(--font-display);
@@ -434,7 +435,7 @@ main {
     margin: 0.5rem 0;
     font-weight: 500;
 }
-h1, h2, h3 {
+h1, h2, h3,h4 {
     font-family: var(--font-display);
     letter-spacing: 2px;
 }
@@ -543,6 +544,7 @@ h1, h2, h3 {
         transform: translateX(0);
     }
 }
+
 .fade-out {
     animation: fadeOut 0.6s forwards;
 }
@@ -701,6 +703,7 @@ h1, h2, h3 {
 .skills-visible .skill-category li:nth-child(6) { animation-delay: 0.6s; }
 .skills-visible .skill-category li:nth-child(7) { animation-delay: 0.7s; }
 .skills-visible .skill-category li:nth-child(8) { animation-delay: 0.8s; }
+
 .subsection-title {
     margin-top: 3rem;
     color: var(--neon-yellow);
@@ -715,16 +718,18 @@ h1, h2, h3 {
 }
 
 
-#projects h2 {
+.projtitle {
+    margin-top: 3rem;
     color: var(--neon-yellow);
     font-size: 1.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
     font-family: 'Cyberpunk-Font-OG', var(--font-display);
-    margin-bottom: 2rem;
-    opacity: 1;
-    display: block;  
+    opacity: 0;
+    transform: translateY(50px); 
+    transition: all 0.8s ease; 
+    /*display: block;   */
    
 }
 
@@ -1058,9 +1063,8 @@ h1, h2, h3 {
     animation: dropDown 0.6s ease-out forwards;
     animation-delay: 2.2s;
 }
-#projects {
-    padding-top: 8rem !important;
-}
+
+
 
 /* Keep hover effects with instant glow */
 .experience-card:hover,
@@ -1103,18 +1107,7 @@ h1, h2, h3 {
 }
 
 /* Restore subsection titles with animations */
-.subsection-title {
-    margin-top: 3rem;
-    color: var(--neon-yellow);
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
-    font-family: 'Cyberpunk-Font-OG', var(--font-display);
-    opacity: 0;
-    transform: translateX(50px);
-    transition: all 0.8s ease;
-}
+
 
 /* Make titles visible when section is active */
 .section.active .subsection-title {
@@ -1122,11 +1115,17 @@ h1, h2, h3 {
     transform: translateX(0);
 }
 
+ .section.active .projtitle {
+    opacity: 1;
+    transform: translateY(0);
+}     
+
 
 
 /* Stagger the animations for subsection titles */
 .section.active .subsection-title:nth-of-type(1) { transition-delay: 0.1s; }
 .section.active .subsection-title:nth-of-type(2) { transition-delay: 0.3s; }
+.section.active .projtitle{ transition-delay: 0.2s; } 
 
 /* Add slide-in animations for experience cards */
 .experience-card {
@@ -1174,3 +1173,4 @@ h1, h2, h3 {
     transform: translateX(0);
     transition-delay: 0.1s;
 }
+

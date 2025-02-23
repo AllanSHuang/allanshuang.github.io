@@ -52,7 +52,3 @@ body {
 /* Remove Oxanium if you're not using it */
 
 /* Basic element styles */
-h1, h2, h3 {
-    font-family: var(--font-display);
-    letter-spacing: 2px;
-} 
