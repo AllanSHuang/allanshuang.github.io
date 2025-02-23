@@ -1045,3 +1045,22 @@ h1, h2, h3 {
 #projects {
     padding-top: 8rem !important;
 }
+
+/* Add these animations for experience cards */
+.experience-card {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.5s ease;
+}
+
+/* This class will be added after section transition */
+.section.active .experience-card {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger the animations for each card */
+.section.active .experience-card:nth-child(2) { transition-delay: 0.2s; }
+.section.active .experience-card:nth-child(3) { transition-delay: 0.4s; }
+.section.active .experience-card:nth-child(4) { transition-delay: 0.6s; }
+.section.active .experience-card:nth-child(5) { transition-delay: 0.8s; }

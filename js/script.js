@@ -64,6 +64,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             currentIndex = targetIndex;
+
+            // After section transition
+            setTimeout(() => {
+                sections.forEach(section => {
+                    if (section.id === targetId) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+            }, 600); // Match this with your section transition duration
         });
     });
     
