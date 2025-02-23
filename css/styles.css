@@ -1106,7 +1106,7 @@ h1, h2, h3,h4 {
     transition: transform 0.3s ease;
 }
 
-/* Restore subsection titles with animations */
+
 
 
 /* Make titles visible when section is active */
@@ -1172,5 +1172,15 @@ h1, h2, h3,h4 {
     opacity: 1;
     transform: translateX(0);
     transition-delay: 0.1s;
+}
+
+/* Add this to hide scrollbars during transitions */
+.section.transitioning {
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.section.transitioning::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Opera */
 }
 

@@ -21,6 +21,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 section => section.id === targetId
             );
             
+            // Reset experience and project sections if leaving them
+            if (currentIndex === Array.from(sections).findIndex(section => section.id === 'experience')) {
+                const experienceSection = document.getElementById('experience');
+                // Reset expanded states
+                experienceSection.querySelectorAll('.project-details').forEach(detail => {
+                    detail.classList.remove('expanded', 'visible');
+                });
+                // Reset buttons
+                experienceSection.querySelectorAll('.more-btn').forEach(btn => {
+                    btn.textContent = 'More';
+                    btn.classList.remove('active');
+                });
+            }
+            
+            if (currentIndex === Array.from(sections).findIndex(section => section.id === 'projects')) {
+                const projectsSection = document.getElementById('projects');
+                // Reset expanded states
+                projectsSection.querySelectorAll('.project-details').forEach(detail => {
+                    detail.classList.remove('expanded', 'visible');
+                });
+                // Reset buttons
+                projectsSection.querySelectorAll('.more-btn').forEach(btn => {
+                    btn.textContent = 'More';
+                    btn.classList.remove('active');
+                });
+            }
+            
             if (targetIndex === currentIndex) return;
             
             // Remove active class from all links
@@ -75,6 +102,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             }, 600); // Match this with your section transition duration
+
+            // Add transitioning class to all sections
+            sections.forEach(section => {
+                section.classList.add('transitioning');
+            });
+
+            // Remove transitioning class after animation completes
+            setTimeout(() => {
+                sections.forEach(section => {
+                    section.classList.remove('transitioning');
+                });
+            }, 600); // Match this with your transition duration
         });
     });
     
