@@ -342,10 +342,12 @@ main {
 .skills-visible .skill-category:nth-child(3) { animation-delay: 0.5s; }
 .skills-visible .skill-category:nth-child(4) { animation-delay: 0.7s; }
 .experience-card, .project-card {
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin: 1rem 0;
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.2s ease,
+                box-shadow 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
 }
 .experience-card h3 {
     letter-spacing: 1px;
@@ -1145,4 +1147,59 @@ h1, h2, h3 {
 .subsection-title {
     color: var(--neon-yellow);
     text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
+}
+
+/* Base styles for cards */
+.experience-card, .project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Separate hover transitions from slide-in animations */
+    transition: background 0.2s ease, /* Faster hover response */
+                box-shadow 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease; /* For the translateY on hover */
+}
+
+/* Slide-in animations handled separately */
+.section.active .experience-card {
+    animation: slideInFromRight 0.8s ease forwards;
+}
+
+.section.active .project-card {
+    animation: slideInFromBottom 0.8s ease forwards;
+}
+
+/* Stagger delays using animation-delay instead of transition-delay */
+.section.active .experience-card:nth-child(2) { animation-delay: 0.3s; }
+.section.active .experience-card:nth-child(3) { animation-delay: 0.6s; }
+.section.active .experience-card:nth-child(4) { animation-delay: 0.9s; }
+.section.active .experience-card:nth-child(5) { animation-delay: 1.2s; }
+
+.section.active .project-card:nth-child(1) { animation-delay: 0.2s; }
+.section.active .project-card:nth-child(2) { animation-delay: 0.4s; }
+.section.active .project-card:nth-child(3) { animation-delay: 0.6s; }
+.section.active .project-card:nth-child(4) { animation-delay: 0.8s; }
+.section.active .project-card:nth-child(5) { animation-delay: 1.0s; }
+
+/* Add the slide-in animations */
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
