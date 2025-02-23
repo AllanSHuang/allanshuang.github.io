@@ -197,4 +197,23 @@ document.addEventListener('DOMContentLoaded', () => {
         
         lastScrollTop = scrollTop;
     });
+
+    // Add this to your existing DOMContentLoaded event listener
+    const experienceSection = document.getElementById('experience');
+
+    // Create an Intersection Observer for experience section
+    const experienceObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('experience-visible');
+            } else {
+                entry.target.classList.remove('experience-visible');
+            }
+        });
+    }, {
+        threshold: 0.2 // Trigger when 20% of the section is visible
+    });
+
+    // Start observing the experience section
+    experienceObserver.observe(experienceSection);
 }); 
