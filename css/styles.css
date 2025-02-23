@@ -347,12 +347,12 @@ main {
     margin: 1rem 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.05);
-    /* Quick response for transform, gradual for glow effects */
+    /* Quick response for transform, slower fade for glow effects */
     transition: 
         transform 0.2s ease,
-        background-color 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        background-color 0.7s ease,
+        box-shadow 0.7s ease,
+        border-color 0.7s ease;
 }
 .experience-card h3 {
     letter-spacing: 1px;
@@ -1161,12 +1161,12 @@ h1, h2, h3 {
     margin: 1rem 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.05);
-    /* Quick response for transform, gradual for glow effects */
+    /* Quick response for transform, slower fade for glow effects */
     transition: 
         transform 0.2s ease,
-        background-color 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease;
+        background-color 0.7s ease,
+        box-shadow 0.7s ease,
+        border-color 0.7s ease;
 }
 
 /* Keep the slide-in animations separate */
