@@ -202,10 +202,12 @@ nav a:hover::before {
     opacity: 1;
 }
 nav a.active {
-    color: white;
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px rgba(255, 56, 100, 0.3);
 }
 nav a.active:hover {
     color: var(--neon-pink);
+    text-shadow: 0 0 15px rgba(255, 56, 100, 0.5);
 }
 .nav-hidden {
     transform: translateY(-100%);
