@@ -390,13 +390,17 @@ main {
     margin: 1rem 0;
 }
 .company-type {
-    color: white !important;
+    color: var(--neon-blue);
     font-size: 0.9em;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
+}
+.experience-card:hover h3 {
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.3);
 }
 .experience-card:hover .company-type {
-    color: var(--neon-yellow) !important;
-    text-shadow: 0 0 10px rgba(255, 211, 25, 0.3);
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px rgba(45, 226, 230, 0.3);
 }
 .date {
     color: var(--neon-pink);
