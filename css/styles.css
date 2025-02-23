@@ -1108,7 +1108,7 @@ h1, h2, h3 {
 .section.active .project-card:nth-child(4) { transition-delay: 0.8s; }
 .section.active .project-card:nth-child(5) { transition-delay: 1.0s; }
 
-/* Fix project section main title (Featured Missions) */
+/* Clean up and fix the Featured Missions title */
 #projects h2 {
     color: var(--neon-yellow);
     font-size: 1.8rem;
@@ -1122,14 +1122,14 @@ h1, h2, h3 {
     transition: all 0.8s ease;
 }
 
-/* Make sure the title appears when section is active */
+/* Make sure it appears when section is active */
 .section.active #projects h2 {
     opacity: 1;
     transform: translateY(0);
     transition-delay: 0.1s;
 }
 
-/* Remove any duplicate or conflicting styles */
+/* Remove any conflicting styles */
 #projects h2,
 .subsection-title {
     color: var(--neon-yellow);
