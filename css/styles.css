@@ -757,10 +757,11 @@ h1, h2, h3 {
     text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
     font-family: 'Cyberpunk-Font-OG', var(--font-display);
     margin-bottom: 2rem;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
+    opacity: 1;
+    transform: none;
+    transition: none;
 }
+
 #projects h2,
 .subsection-title {
     color: var(--neon-yellow);
@@ -1117,16 +1118,16 @@ h1, h2, h3 {
     text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
     font-family: 'Cyberpunk-Font-OG', var(--font-display);
     margin-bottom: 2rem;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
+    opacity: 1;
+    transform: none;
+    transition: none;
 }
 
-/* Make sure it appears when section is active */
+/* Remove animation triggers */
 .section.active #projects h2 {
     opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.1s;
+    transform: none;
+    transition-delay: 0;
 }
 
 /* Remove any conflicting styles */
