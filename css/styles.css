@@ -1061,7 +1061,7 @@ h1, h2, h3 {
 .experience-card {
     opacity: 0;
     transform: translateX(50px);
-    transition: all 0.8s ease; /* Increased from 0.5s to 0.8s */
+    transition: all 0.4s ease; 
 }
 
 .section.active .experience-card {
