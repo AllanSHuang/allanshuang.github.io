@@ -347,8 +347,12 @@ main {
     margin: 1rem 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.05);
-    /* Match the skill cards timing */
-    transition: all 0.3s ease;
+    /* Quick transitions for both hover on and off */
+    transition: 
+        transform 0.2s ease,
+        background 0s,
+        box-shadow 0s,
+        border-color 0s;
 }
 .experience-card h3 {
     letter-spacing: 1px;
@@ -1155,60 +1159,19 @@ h1, h2, h3 {
     margin: 1rem 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.05);
-    /* Match the skill cards timing */
-    transition: all 0.3s ease;
+    /* Quick transitions for both hover on and off */
+    transition: 
+        transform 0.2s ease,
+        background 0s,
+        box-shadow 0s,
+        border-color 0s;
 }
 
-/* Keep the slide-in animations separate using animation instead of transition */
-.section.active .experience-card {
-    animation: slideInFromRight 0.8s ease forwards;
-}
-
-.section.active .project-card {
-    animation: slideInFromBottom 0.8s ease forwards;
-}
-
-/* Stagger delays using animation-delay instead of transition-delay */
-.section.active .experience-card:nth-child(2) { animation-delay: 0.3s; }
-.section.active .experience-card:nth-child(3) { animation-delay: 0.6s; }
-.section.active .experience-card:nth-child(4) { animation-delay: 0.9s; }
-.section.active .experience-card:nth-child(5) { animation-delay: 1.2s; }
-
-.section.active .project-card:nth-child(1) { animation-delay: 0.2s; }
-.section.active .project-card:nth-child(2) { animation-delay: 0.4s; }
-.section.active .project-card:nth-child(3) { animation-delay: 0.6s; }
-.section.active .project-card:nth-child(4) { animation-delay: 0.8s; }
-.section.active .project-card:nth-child(5) { animation-delay: 1.0s; }
-
-/* Add the slide-in animations */
-@keyframes slideInFromRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInFromBottom {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Add hover effects for experience and project cards */
+/* Keep hover effect styles */
 .experience-card:hover,
 .project-card:hover {
     transform: translateY(-5px);
     background: rgba(255, 56, 100, 0.2);
     box-shadow: 0 0 20px rgba(255, 56, 100, 0.4);
     border-color: var(--neon-pink);
-    transition: transform 0.2s ease;
 }
