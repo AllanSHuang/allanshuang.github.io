@@ -347,12 +347,8 @@ main {
     margin: 1rem 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.05);
-    /* Quick transitions for both hover on and off */
-    transition: 
-        transform 0.2s ease,
-        background 0s,
-        box-shadow 0s,
-        border-color 0s;
+    /* Quick response for hover effects */
+    transition: transform 0.3s ease;
 }
 .experience-card h3 {
     letter-spacing: 1px;
@@ -717,6 +713,23 @@ h1, h2, h3 {
     transform: translateX(50px);
     transition: all 0.8s ease;
 }
+
+
+#projects h2 {
+    color: var(--neon-yellow);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
+    font-family: 'Cyberpunk-Font-OG', var(--font-display);
+    margin-bottom: 2rem;
+    opacity: 1;
+    display: block;  
+   
+}
+
+
+
 .header-scroll-hidden {
     transform: translateY(-100%);
 }
@@ -737,7 +750,7 @@ h1, h2, h3 {
     border-radius: 10px;
     margin: 1.5rem 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.8s ease, opacity 0.8s ease, background 0s, box-shadow 0s , border-color 0s ;
+    transition: transform 0.8s ease, opacity 0.8s ease;
     opacity: 0;
     transform: translateY(50px);
 }
@@ -756,24 +769,11 @@ h1, h2, h3 {
 .project-card .highlight {
     color: rgba(255, 255, 255, 0.8);
 }
-#projects h2 {
-    color: var(--neon-yellow);
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
-    font-family: 'Cyberpunk-Font-OG', var(--font-display);
-    margin-bottom: 2rem;
-    opacity: 1;
-    transform: none;
-    transition: none;
-}
 
-#projects h2,
-.subsection-title {
-    color: var(--neon-yellow);
-    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
-}
+
+
+/* Remove any conflicting styles */
+
 .about-content:hover .about-text {
     color: rgba(255, 255, 255, 0.95);
 }
@@ -1062,116 +1062,115 @@ h1, h2, h3 {
     padding-top: 8rem !important;
 }
 
-/* Update experience card animations with slower timing */
-.experience-card {
-    opacity: 0;
-    transform: translateX(50px);
-    transition: 
-        transform 0.8s ease,
-        opacity 0.8s ease,
-        background 0s,
-        box-shadow 0s,
-        border-color 0s;
-}
-
-.section.active .experience-card {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Update stagger delays for experience cards */
-.section.active .experience-card:nth-child(2) { transition-delay: 0.3s; }
-.section.active .experience-card:nth-child(3) { transition-delay: 0.6s; }
-.section.active .experience-card:nth-child(4) { transition-delay: 0.9s; }
-.section.active .experience-card:nth-child(5) { transition-delay: 1.2s; }
-
-/* Animate when section becomes active */
-.section.active .subsection-title {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Add initial state for project cards */
-.project-card {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 
-        transform 0.8s ease,
-        opacity 0.8s ease,
-        background 0s,
-        box-shadow 0s,
-        border-color 0s;
-}
-
-/* Project section title animation */
-#projects h2 {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
-}
-
-/* Animate when section becomes active */
-.section.active #projects h2,
-.section.active .project-card {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Stagger the animations for project cards */
-.section.active .project-card:nth-child(1) { transition-delay: 0.2s; }
-.section.active .project-card:nth-child(2) { transition-delay: 0.4s; }
-.section.active .project-card:nth-child(3) { transition-delay: 0.6s; }
-.section.active .project-card:nth-child(4) { transition-delay: 0.8s; }
-.section.active .project-card:nth-child(5) { transition-delay: 1.0s; }
-
-/* Clean up and fix the Featured Missions title */
-#projects h2 {
-    color: var(--neon-yellow);
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
-    font-family: 'Cyberpunk-Font-OG', var(--font-display);
-    margin-bottom: 2rem;
-    opacity: 1;
-    transform: none;
-    transition: none;
-}
-
-/* Remove animation triggers */
-.section.active #projects h2 {
-    opacity: 1;
-    transform: none;
-    transition-delay: 0;
-}
-
-/* Remove any conflicting styles */
-#projects h2,
-.subsection-title {
-    color: var(--neon-yellow);
-    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
-}
-
-/* Base styles for cards */
-.experience-card, .project-card {
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin: 1rem 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(255, 255, 255, 0.05);
-    /* Quick transitions for both hover on and off */
-    transition: 
-        transform 0.2s ease,
-        background 0s,
-        box-shadow 0s,
-        border-color 0s;
-}
-
-/* Keep hover effect styles */
+/* Keep hover effects with instant glow */
 .experience-card:hover,
 .project-card:hover {
     transform: translateY(-5px);
     background: rgba(255, 56, 100, 0.2);
     box-shadow: 0 0 20px rgba(255, 56, 100, 0.4);
     border-color: var(--neon-pink);
+}
+
+/* Add back project card animations */
+.project-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+
+
+/* Make cards visible when section is active */
+.section.active .project-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger the animations for project cards */
+.section.active .project-card:nth-child(1) { transition-delay: 0.3s; }
+.section.active .project-card:nth-child(2) { transition-delay: 0.5s; }
+.section.active .project-card:nth-child(3) { transition-delay: 0.7s; }
+.section.active .project-card:nth-child(4) { transition-delay: 0.9s; }
+.section.active .project-card:nth-child(5) { transition-delay: 1.1s; }
+
+/* Keep the hover effects separate */
+.project-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 56, 100, 0.2);
+    box-shadow: 0 0 20px rgba(255, 56, 100, 0.4);
+    border-color: var(--neon-pink);
+    transition: transform 0.3s ease;
+}
+
+/* Restore subsection titles with animations */
+.subsection-title {
+    margin-top: 3rem;
+    color: var(--neon-yellow);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
+    font-family: 'Cyberpunk-Font-OG', var(--font-display);
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease;
+}
+
+/* Make titles visible when section is active */
+.section.active .subsection-title {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+/* Stagger the animations for subsection titles */
+.section.active .subsection-title:nth-of-type(1) { transition-delay: 0.1s; }
+.section.active .subsection-title:nth-of-type(2) { transition-delay: 0.3s; }
+
+/* Add slide-in animations for experience cards */
+.experience-card {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+/* Make cards visible when section is active */
+.section.active .experience-card {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Stagger the animations for experience cards - starts after subsection titles */
+.section.active .experience-card:nth-child(1) { transition-delay: 0.4s; }  /* Starts after 0.3s title delay */
+.section.active .experience-card:nth-child(2) { transition-delay: 0.6s; }
+.section.active .experience-card:nth-child(3) { transition-delay: 0.8s; }
+.section.active .experience-card:nth-child(4) { transition-delay: 1.0s; }
+.section.active .experience-card:nth-child(5) { transition-delay: 1.2s; }
+
+/* Keep the hover effects separate */
+.experience-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 56, 100, 0.2);
+    box-shadow: 0 0 20px rgba(255, 56, 100, 0.4);
+    border-color: var(--neon-pink);
+    transition: transform 0.3s ease;
+}
+
+
+
+
+/* Remove all animation-related styles */
+
+
+/* Simple styling for Featured Missions title - always visible */
+
+
+
+
+/* Make title visible and animate when section becomes active */
+.section.active .section-title {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.1s;
 }
