@@ -48,6 +48,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
             
+            // Reset skills section if leaving it
+            if (currentIndex === Array.from(sections).findIndex(section => section.id === 'skills')) {
+                const skillsSection = document.getElementById('skills');
+                const skillCategories = skillsSection.querySelectorAll('.skill-category');
+                
+                // Add fade-out animation
+                skillCategories.forEach((category, index) => {
+                    setTimeout(() => {
+                        category.style.opacity = '0';
+                        category.style.transform = 'translateX(-50px)';
+                    }, index * 100);  // Stagger the fade-out
+                });
+                
+                // Remove skills-visible class after animations complete
+                setTimeout(() => {
+                    skillsSection.classList.remove('skills-visible');
+                }, skillCategories.length * 100 + 400);  // Wait for all animations to finish
+            }
+            
             if (targetIndex === currentIndex) return;
             
             // Remove active class from all links
@@ -68,12 +87,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Modify header animation for section changes
             if (targetId === 'about') {
-                header.classList.remove('header-hidden');
+                header.classList.remove('nav-hidden');
                 header.classList.add('header-visible');
-                header.classList.remove('header-scroll-hidden');
             } else {
+                header.classList.add('nav-hidden');
                 header.classList.remove('header-visible');
-                header.classList.add('header-hidden');
             }
             
             // Slide to target section
@@ -86,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     const aboutSection = document.getElementById('about');
                     aboutSection.scrollTop = 0;
-                    header.classList.remove('header-scroll-hidden');
                 }, 600); // Match this with your transition duration
             }
             

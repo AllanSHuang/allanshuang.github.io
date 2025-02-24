@@ -52,6 +52,11 @@ body {
     -webkit-media-controls-play-button: none;
     -webkit-media-controls-start-playback-button: none;
 }
+.nav-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+}
 header {
     padding: 4rem 2rem;
     text-align: center;
@@ -59,8 +64,9 @@ header {
     width: 100%;
     top: 0;
     z-index: 2;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s ease;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
     transform: translateY(0);
+    opacity: 1;
 }
 .glitch-container {
     position: relative;
@@ -137,13 +143,7 @@ header {
     }
 }
 .subtitle::after {
-    content: '';
-    display: block;
-    width: 150px;
-    height: 2px;
-    background: var(--neon-blue);
-    margin: 1rem auto 0;
-    box-shadow: 0 0 10px var(--neon-blue);
+    display: none;
 }
 .about-text:first-of-type {
     margin-top: 0.5rem;
@@ -322,6 +322,9 @@ main {
     padding: 3rem 1.5rem 1.5rem;
     position: relative;
     margin-top: 1rem;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .skill-category h3 {
     position: absolute;
@@ -573,9 +576,14 @@ h1, h2, h3,h4 {
     }
 }
 .header-scroll-hidden {
-    transform: translateY(-150%);
+    transform: translateY(-300vh);
     opacity: 0;
     visibility: hidden;
+    z-index: -1;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s ease,
+                visibility 0s linear 0.8s,
+                z-index 0s linear 0.8s;
 }
 .header-visible {
     transform: translateY(0);
@@ -816,6 +824,9 @@ h1, h2, h3,h4 {
     padding: 3rem 1.5rem 1.5rem;
     position: relative;
     margin-top: 1rem;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 .skill-category h3 {
     position: absolute;
@@ -837,20 +848,6 @@ h1, h2, h3,h4 {
 .skills-visible .skill-category {
     animation: slideInFromLeft 0.6s ease forwards;
 }
-@keyframes slideInFromLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-.skills-visible .skill-category:nth-child(1) { animation-delay: 0.1s; }
-.skills-visible .skill-category:nth-child(2) { animation-delay: 0.3s; }
-.skills-visible .skill-category:nth-child(3) { animation-delay: 0.5s; }
-.skills-visible .skill-category:nth-child(4) { animation-delay: 0.7s; }
 .skill-category:hover h3 {
     transform: translateX(-50%) translateY(-2px);
     color: var(--neon-blue);
@@ -1438,4 +1435,3 @@ h1, h2, h3,h4 {
         margin-top: 5rem;  /* More space on very small screens */
     }
 }
-
