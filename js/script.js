@@ -250,18 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const video = document.getElementById('bgVideo');
     
-    // Force play on iOS
-    video.play().catch(function(error) {
-        console.log("Video play failed", error);
-    });
-
-    // Try to play video whenever it can
-    video.addEventListener('canplay', function() {
-        video.play().catch(function(error) {
-            console.log("Video play failed", error);
-        });
-    });
-
     // When video ends, show the last frame with slightly reduced opacity
     video.addEventListener('ended', () => {
         video.currentTime = video.duration - 0.1;  // Stop at last frame
