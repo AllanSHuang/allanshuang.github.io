@@ -46,13 +46,11 @@ body {
     -webkit-user-select: none;
     user-select: none;
     outline: none;
-    &::-webkit-media-controls {
-        display: none !important;
-    }
-    &::-webkit-media-controls-start-playback-button {
-        display: none !important;
-        -webkit-appearance: none;
-    }
+    /* iOS specific controls hiding */
+    -webkit-media-controls: none;
+    -webkit-media-controls-panel: none;
+    -webkit-media-controls-play-button: none;
+    -webkit-media-controls-start-playback-button: none;
 }
 header {
     padding: 4rem 2rem;
