@@ -1292,3 +1292,81 @@ h1, h2, h3,h4 {
     transition: opacity 0.3s ease;
 }
 
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    /* Adjust header */
+    .glitch {
+        font-size: 2.5rem;  /* Smaller title */
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    /* Adjust navigation */
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0.5rem;
+    }
+
+    nav a {
+        min-width: auto;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Adjust sections */
+    .section {
+        padding: 1rem;
+        padding-top: 10rem;  /* Reduced top padding */
+    }
+
+    /* Adjust about text */
+    .about-text {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    /* Adjust cards */
+    .experience-card,
+    .project-card {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    /* Adjust contact info */
+    .contact-text {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+        margin: 1rem 0;
+    }
+
+    /* Adjust section titles */
+    .subsection-title,
+    .projtitle,
+    #contact h2 {
+        font-size: 1.4rem;
+        margin-top: 2rem;
+    }
+}
+
+/* Additional adjustments for very small screens */
+@media screen and (max-width: 480px) {
+    .glitch {
+        font-size: 2rem;
+    }
+
+    nav a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .contact-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
