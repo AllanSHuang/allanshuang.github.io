@@ -247,4 +247,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
         lastScrollTop = scrollTop;
     });
+
+    const video = document.getElementById('bgVideo');
+    
+    // When video ends, show the last frame with slightly reduced opacity
+    video.addEventListener('ended', () => {
+        video.currentTime = video.duration - 0.1;  // Stop at last frame
+        video.style.opacity = '0.6';  // Moderately reduced opacity at last frame
+    });
+
+    // Reset opacity when video starts playing (in case of refresh)
+    video.addEventListener('play', () => {
+        video.style.opacity = '0.8';
+    });
 }); 

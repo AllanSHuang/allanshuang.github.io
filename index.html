@@ -15,7 +15,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@300;400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="cyber-background"></div>
+    <div class="cyber-background">
+        <video autoplay muted playsinline id="bgVideo">
+            <source src="vid/background.mp4" type="video/mp4">
+        </video>
+    </div>
     
     <header>
         <div class="glitch-container">
@@ -30,7 +34,7 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#experience">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact">Info / Contact</a></li>
         </ul>
     </nav>
 
@@ -267,8 +271,15 @@
             <section id="contact" class="section">
                 <h2>Transmission Channel</h2>
                 <div class="contact-info">
-                    <p>📧 allanshuang@gmail.com</p>
-                    <p>🔗 linkedin.com/in/allanshuang</p>
+                    <p class="contact-text">
+                        <img src="images/gmail.png" alt="Gmail" class="contact-icon">: allanshuang@gmail.com
+                    </p>
+                    <p class="contact-text">
+                        <img src="images/linkedin.png" alt="LinkedIn" class="contact-icon">: <a href="https://linkedin.com/in/allanshuang" target="_blank">linkedin.com/in/allanshuang</a>
+                    </p>
+                    <p class="contact-text">
+                        <img src="images/github.png" alt="GitHub" class="contact-icon">: <a href="https://github.com/AllanSHuang" target="_blank">github.com/AllanSHuang</a>
+                    </p>
                 </div>
             </section>
         </div>

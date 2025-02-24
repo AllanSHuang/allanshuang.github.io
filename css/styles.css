@@ -27,14 +27,19 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: 
-        linear-gradient(0deg, rgba(10,10,22,0.3), rgba(10,10,22,0.3)),
-        url('../images/momo.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     z-index: -1;
     pointer-events: none;
+    background: none;
+}
+.cyber-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity 0.5s ease;
 }
 header {
     padding: 4rem 2rem;
@@ -1182,5 +1187,108 @@ h1, h2, h3,h4 {
 
 .section.transitioning::-webkit-scrollbar {
     display: none;  /* Chrome, Safari, Opera */
+}
+
+/* Style contact text with cyberpunk effects */
+.contact-text {
+    color: var(--neon-yellow);
+    font-family: 'BlenderProBook', var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 95% 100%, 0 100%, 5% 70%);
+}
+
+.contact-text:hover {
+    color: var(--neon-blue);
+    text-shadow: 0 0 15px rgba(45, 226, 230, 0.7);
+    background: rgba(255, 56, 100, 0.2);
+    transform: translateY(-2px);
+    border-color: var(--neon-pink);
+}
+
+/* Add glitch effect when section is active */
+.section.active .contact-text {
+    animation: cyber-glitch-4 5s linear infinite;
+}
+
+/* Update Transmission Channel title to match Featured Missions */
+#contact h2 {
+    margin-top: 3rem;
+    color: var(--neon-yellow);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 211, 25, 0.5);
+    font-family: 'Cyberpunk-Font-OG', var(--font-display);
+    margin-bottom: 2rem;
+}
+
+/* Style the contact links */
+.contact-text a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-text a:hover {
+    color: var(--neon-blue);
+    text-shadow: 0 0 15px rgba(45, 226, 230, 0.7);
+}
+
+/* Style contact icons with consistent size */
+.contact-icon {
+    width: 32px;  /* Increased and standardized size */
+    height: 32px;  /* Increased and standardized size */
+    vertical-align: middle;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+    object-fit: contain;  /* Maintain aspect ratio */
+}
+
+/* Make icons glow on hover */
+.contact-text:hover .contact-icon {
+    filter: drop-shadow(0 0 5px var(--neon-blue));
+    transform: scale(1.1);  /* Optional: slight scale up on hover */
+}
+
+/* Increase opacity of project descriptions */
+.project-details.visible {
+    opacity: 1 !important;  /* Force full opacity */
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-details p {
+    opacity: 1;  /* Ensure text is fully visible */
+}
+
+/* Make project descriptions as visible as experience descriptions */
+.project-card .project-details.visible {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    padding: 1rem 0;
+}
+
+.project-card .project-details .highlight {
+    color: rgba(255, 255, 255, 0.95);  /* Brighter text */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);  /* Subtle glow */
+}
+
+/* Remove any conflicting opacity rules */
+.project-card .project-details p {
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
