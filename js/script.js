@@ -207,12 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => sectionsObserver.observe(section));
 
-    // Handle nav visibility for Experience and Projects sections
+    // Handle nav visibility for Skills, Experience and Projects sections
     const experienceSection = document.getElementById('experience');
     const projectsSection = document.getElementById('projects');
     const nav = document.querySelector('nav');
     
-    [experienceSection, projectsSection].forEach(section => {
+    [skillsSection, experienceSection, projectsSection].forEach(section => {
         let lastScrollTop = 0;
         
         section.addEventListener('scroll', () => {

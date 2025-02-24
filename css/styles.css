@@ -1294,6 +1294,38 @@ h1, h2, h3,h4 {
 
 /* Mobile responsive styles */
 @media screen and (max-width: 768px) {
+    /* Keep nav bar horizontal and scrollable */
+    nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        position: fixed;  /* Keep it fixed at top */
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;  /* Keep horizontal layout */
+        flex-direction: row;  /* Force horizontal */
+        flex-wrap: nowrap;  /* Prevent wrapping */
+        width: max-content;  /* Allow content to determine width */
+        gap: 3rem;  /* Keep original spacing */
+    }
+
+    nav a {
+        white-space: nowrap;  /* Prevent text wrapping */
+        min-width: 120px;  /* Keep original width */
+        padding: 0.8rem 2rem;  /* Keep original padding */
+        font-size: 0.9rem;
+    }
+
+    /* Remove any flex-wrap or vertical adjustments */
+    nav li {
+        flex-shrink: 0;  /* Prevent items from shrinking */
+    }
+
     /* Adjust header */
     .glitch {
         font-size: 2.5rem;  /* Smaller title */
@@ -1302,20 +1334,6 @@ h1, h2, h3,h4 {
     .subtitle {
         font-size: 1rem;
         margin-top: 0.5rem;
-    }
-
-    /* Adjust navigation */
-    nav ul {
-        gap: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 0.5rem;
-    }
-
-    nav a {
-        min-width: auto;
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
     }
 
     /* Adjust sections */
