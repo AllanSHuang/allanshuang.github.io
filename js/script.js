@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Remove the about content scroll handler
+    // Update the about section scroll handler
     const aboutSection = document.getElementById('about');
     let lastScrollTop = 0;
 
