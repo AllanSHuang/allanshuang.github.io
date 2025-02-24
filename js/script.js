@@ -252,8 +252,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // When video ends, show the last frame with slightly reduced opacity
     video.addEventListener('ended', () => {
-        video.currentTime = video.duration - 0.1;  // Stop at last frame
-        video.style.opacity = '0.6';  // Moderately reduced opacity at last frame
+        // Pause the video to ensure it doesn't continue playing
+        video.pause();
+        
+        // Set to last frame
+        video.currentTime = video.duration - 0.1;
+        video.style.opacity = '0.6';
+        
+        // Double check to prevent any potential looping
+        setTimeout(() => {
+            if (video.currentTime < video.duration - 0.1) {
+                video.currentTime = video.duration - 0.1;
+                video.pause();
+            }
+        }, 50);
     });
 
     // Reset opacity when video starts playing (in case of refresh)
