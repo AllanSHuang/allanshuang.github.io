@@ -12,14 +12,68 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
     let currentIndex = 0;
     
+    // Reset any existing animations on nav items
+    const navItems = document.querySelectorAll('nav li');
+    navItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(-20px)';
+    });
+    
+    // Apply sequential animations
+    navItems.forEach((item, index) => {
+        setTimeout(() => {
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        }, 100 + (index * 100)); // 100ms delay between each item
+    });
+    
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
+            
+            // Add the transitioning class to body to hide scrollbars
+            document.body.classList.add('transitioning-sections');
             
             const targetId = e.target.getAttribute('href').substring(1);
             const targetIndex = Array.from(sections).findIndex(
                 section => section.id === targetId
             );
+            
+            // IMPORTANT: Hide certification section completely during ANY transition 
+            // that doesn't directly involve it
+            const certSection = document.getElementById('certifications');
+            const certIndex = Array.from(sections).findIndex(section => section.id === 'certifications');
+            
+            // If we're not coming from or going to the certification section, but we'll pass through it
+            if (targetId !== 'certifications' && currentIndex !== certIndex && 
+                ((currentIndex < certIndex && targetIndex > certIndex) || 
+                 (currentIndex > certIndex && targetIndex < certIndex))) {
+                
+                // Immediately hide the certification section
+                certSection.style.opacity = '0';
+                certSection.style.visibility = 'hidden';
+                certSection.style.transition = 'none';
+                
+                // Reset all animations
+                const title = certSection.querySelector('.subsection-title');
+                const certCards = certSection.querySelectorAll('.certification-card');
+                
+                if (title) title.style.opacity = '0';
+                certCards.forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateX(100px)';
+                });
+                
+                // Make it visible again after transition is complete
+                setTimeout(() => {
+                    certSection.style.opacity = '1';
+                    certSection.style.visibility = 'visible';
+                }, 700);
+            }
+            
+            // Skip if already on the target section
+            if (targetIndex === currentIndex) return;
             
             // Reset experience and project sections if leaving them
             if (currentIndex === Array.from(sections).findIndex(section => section.id === 'experience')) {
@@ -66,8 +120,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     skillsSection.classList.remove('skills-visible');
                 }, skillCategories.length * 100 + 400);  // Wait for all animations to finish
             }
-            
-            if (targetIndex === currentIndex) return;
+
+            // MOVE CERTIFICATION SECTION CODE AFTER PROJECT SECTION
+            // Reset certification section if leaving it
+            if (currentIndex === Array.from(sections).findIndex(section => section.id === 'certifications')) {
+                const certificationsSection = document.getElementById('certifications');
+                // Reset expanded states
+                certificationsSection.querySelectorAll('.project-details').forEach(detail => {
+                    detail.classList.remove('expanded', 'visible');
+                });
+                // Reset buttons
+                certificationsSection.querySelectorAll('.more-btn').forEach(btn => {
+                    btn.textContent = 'More';
+                    btn.classList.remove('active');
+                });
+            }
             
             // Remove active class from all links
             navLinks.forEach(l => l.classList.remove('active'));
@@ -120,17 +187,60 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }, 600); // Match this with your section transition duration
 
-            // Add transitioning class to all sections
-            sections.forEach(section => {
-                section.classList.add('transitioning');
-            });
-
-            // Remove transitioning class after animation completes
+            // Clean version without the certification title override
             setTimeout(() => {
                 sections.forEach(section => {
                     section.classList.remove('transitioning');
                 });
             }, 600); // Match this with your transition duration
+
+            // Update your existing certification section handler - MOVED TO END
+            if (targetId === 'certifications') {
+                // Reset any existing styles
+                const certSection = document.getElementById('certifications');
+                const title = certSection.querySelector('.subsection-title');
+                const certCards = certSection.querySelectorAll('.certification-card');
+                
+                // Always cancel any existing transitions first
+                title.style.transition = 'none';
+                certCards.forEach(card => {
+                    card.style.transition = 'none';
+                });
+                
+                // Reset animations to starting positions
+                title.style.opacity = '0';
+                title.style.transform = 'translateY(-30px)';
+                
+                certCards.forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateX(100px)';
+                });
+                
+                // Force reflow to ensure styles take effect before adding transitions
+                void certSection.offsetWidth;
+                
+                // Schedule the animations
+                setTimeout(() => {
+                    // First animate the title
+                    title.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+                    title.style.opacity = '1';
+                    title.style.transform = 'translateY(0)';
+                    
+                    // Then animate the cards after title animation completes
+                    setTimeout(() => {
+                        certCards.forEach(card => {
+                            card.style.transition = "transform 2s cubic-bezier(0.19, 1, 0.22, 1), opacity 2s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.4s ease, border-color 0.4s ease";
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateX(0)';
+                        });
+                    }, 500); // 500ms after title appears
+                }, 300); // Start title animation after section transition begins
+            }
+
+            // Remove the transitioning class after transition completes
+            setTimeout(() => {
+                document.body.classList.remove('transitioning-sections');
+            }, 650); // Slightly longer than your transition duration
         });
     });
     
@@ -288,5 +398,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reset opacity when video starts playing (in case of refresh)
     video.addEventListener('play', () => {
         video.style.opacity = '0.8';
+    });
+
+    // Update the sections-container width to accommodate the new section
+    document.querySelector('.sections-container').style.width = '600%';  // Changed from 500% to 600%
+
+    // At the end of your file, move the certification scroll handler after all project handlers
+    const certificationsSection = document.getElementById('certifications');
+    let lastCertScrollTop = 0;
+
+    certificationsSection.addEventListener('scroll', () => {
+        const scrollTop = certificationsSection.scrollTop;
+        const nav = document.querySelector('nav');
+        
+        // Add classes when scrolling down, hide nav
+        if (scrollTop > 0) {
+            nav.classList.add('nav-hidden');
+        } else {
+            // Only show nav when completely at the top
+            nav.classList.remove('nav-hidden');
+        }
+        
+        lastCertScrollTop = scrollTop;
     });
 }); 

@@ -1056,28 +1056,14 @@ h1, h2, h3,h4 {
     animation-delay: 1s;
 }
 .initial-load nav li {
-    opacity: 0;
+    /* No animation properties here */
 }
-.initial-load nav li:nth-child(1) {
-    animation: dropDown 0.6s ease-out forwards;
-    animation-delay: 1.4s;
-}
-.initial-load nav li:nth-child(2) {
-    animation: dropDown 0.6s ease-out forwards;
-    animation-delay: 1.6s;
-}
-.initial-load nav li:nth-child(3) {
-    animation: dropDown 0.6s ease-out forwards;
-    animation-delay: 1.8s;
-}
-.initial-load nav li:nth-child(4) {
-    animation: dropDown 0.6s ease-out forwards;
-    animation-delay: 2.0s;
-}
-.initial-load nav li:nth-child(5) {
-    animation: dropDown 0.6s ease-out forwards;
-    animation-delay: 2.2s;
-}
+.initial-load nav li:nth-child(1) { /* remove animation-delay */ }
+.initial-load nav li:nth-child(2) { /* remove animation-delay */ }
+.initial-load nav li:nth-child(3) { /* remove animation-delay */ }
+.initial-load nav li:nth-child(4) { /* remove animation-delay */ }
+.initial-load nav li:nth-child(5) { /* remove animation-delay */ }
+.initial-load nav li:nth-child(6) { /* remove animation-delay */ }
 
 
 
@@ -1434,4 +1420,145 @@ h1, h2, h3,h4 {
     header {
         margin-top: 5rem;  /* More space on very small screens */
     }
+}
+
+/* Add consistent animation timing for nav items */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 3rem;
+}
+
+nav li {
+    /* No animation properties here */
+}
+
+/* Certification card styling - consolidated */
+.certification-card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(10, 10, 22, 0.327);
+    border: 1px solid var(--neon-blue);
+    opacity: 0; /* Start hidden */
+    transform: translateX(100px); /* Start from right */
+    /* Remove background from the main transition */
+    transition: transform 2s cubic-bezier(0.19, 1, 0.22, 1), 
+                opacity 2s cubic-bezier(0.19, 1, 0.22, 1), 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease;
+    transition-delay: 0.3s; /* Delay to start after title animation */
+}
+
+/* Add separate transition for background only when hovering */
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(45, 226, 230, 0.5);
+    border-color: var(--neon-blue);
+    background: rgba(255, 56, 100, 0.2); /* Slightly darker background when hovered */
+    transition: transform 0.4s ease, 
+                box-shadow 0.4s ease, 
+                border-color 0.4s ease, 
+                background 0.4s ease; /* Include background only in hover state */
+}
+
+/* Make background revert instantly when not hovered */
+.certification-card:not(:hover) {
+    background: rgba(10, 10, 22, 0.327);
+    transition: transform 0.1s ease, 
+                box-shadow 0.1s ease, 
+                border-color 0.1s ease,
+                background 0s ease; /* 0s transition for instant background change */
+}
+
+/* When section is active, apply the animation */
+#certifications.active .certification-card {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.cert-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.cert-image-container {
+    position: relative;
+    flex-shrink: 0;
+    width: 220px; /* Increased from 150px to 220px */
+    height: auto;
+    overflow: visible;
+    border: none;
+    box-shadow: none;
+}
+
+.cert-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+    filter: drop-shadow(0 0 12px rgba(45, 226, 230, 0.5)); /* Slightly enhanced glow */
+    cursor: pointer;
+}
+
+/* Add subtle hover effect to the image itself */
+.cert-image-container a:hover .cert-image {
+    filter: drop-shadow(0 0 15px rgba(45, 226, 230, 0.8));
+    transform: scale(1.08); /* Slightly larger scale on direct hover */
+}
+
+.certification-card:not(:hover) {
+    transform: translateY(0);
+    box-shadow: none;
+    border-color: var(--neon-blue);
+    transition: all 0.1s ease; /* Faster reset transition */
+}
+
+.certification-card:not(:hover) .cert-image {
+    transform: scale(1);
+    transition: transform 0.2s ease; /* Faster reset transition */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .cert-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .cert-image-container {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Add animation for the certifications title */
+#certifications .subsection-title {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition-delay: 0.2s;
+}
+
+#certifications.active:not(.transitioning) .subsection-title {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hide subsection titles during transitions */
+.section.transitioning .subsection-title {
+    opacity: 0 !important;
+    transition: opacity 0.2s ease;
+}
+
+/* Hide scrollbars during section transitions */
+body.transitioning-sections .section {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+body.transitioning-sections .section::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
 }
