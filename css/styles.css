@@ -866,28 +866,22 @@ h1, h2, h3,h4 {
     border-color: var(--neon-pink);
 }
 @keyframes glitch-anim {
-    0% {
-        clip-path: inset(80% 0 0 0);
+    0%, 100% {
+        clip-path: inset(50% 0 30% 0);
     }
     20% {
-        clip-path: inset(20% 0 60% 0);
-    }
-    40% {
         clip-path: inset(60% 0 20% 0);
     }
-    60% {
+    40% {
         clip-path: inset(40% 0 40% 0);
     }
-    80% {
-        clip-path: inset(0 0 80% 0);
-    }
-    100% {
-        clip-path: inset(50% 0 30% 0);
+    60%, 80% {
+        clip-path: inset(80% 0 0% 0);
     }
 }
 @keyframes glitch-anim2 {
-    0% {
-        clip-path: inset(20% 0 60% 0);
+    0%, 100% {
+        clip-path: inset(50% 0 30% 0);
     }
     20% {
         clip-path: inset(60% 0 20% 0);
@@ -895,14 +889,8 @@ h1, h2, h3,h4 {
     40% {
         clip-path: inset(40% 0 40% 0);
     }
-    60% {
-        clip-path: inset(80% 0 0 0);
-    }
-    80% {
-        clip-path: inset(50% 0 30% 0);
-    }
-    100% {
-        clip-path: inset(0 0 80% 0);
+    60%, 80% {
+        clip-path: inset(80% 0 0% 0);
     }
 }
 @keyframes glitch-skew {
@@ -1561,4 +1549,18 @@ body.transitioning-sections .section {
 
 body.transitioning-sections .section::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
+}
+
+/* Hide certification section during transitions */
+body.transitioning-sections #certifications {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.1s ease, visibility 0.1s ease;
+}
+
+/* Restore visibility when transition completes */
+body:not(.transitioning-sections) #certifications.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: opacity 0.5s ease 0.3s, visibility 0.5s ease 0.3s;
 }
