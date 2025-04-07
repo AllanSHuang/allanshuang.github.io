@@ -61,6 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 section.classList.remove('skills-visible');
             }, skillCategories.length * 100 + 400);
         }
+        
+        // Special handling for certifications section
+        if (sectionId === 'certifications') {
+            section.classList.add('cert-fade-out');
+        }
     }
     
     // Hide certification section during transitions
@@ -92,6 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 certSection.style.opacity = '1';
                 certSection.style.visibility = 'visible';
+                certSection.classList.remove('cert-fade-out');
             }, 700);
         }
     }
@@ -99,6 +105,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animate certification section when entering it
     function animateCertificationSection() {
         const certSection = document.getElementById('certifications');
+        certSection.classList.remove('cert-fade-out');
+        
         const title = certSection.querySelector('.subsection-title');
         const certCards = certSection.querySelectorAll('.certification-card');
         

@@ -1564,3 +1564,47 @@ body:not(.transitioning-sections) #certifications.active {
     visibility: visible !important;
     transition: opacity 0.5s ease 0.3s, visibility 0.5s ease 0.3s;
 }
+
+/* Certification section animations */
+.cert-fade-out .subsection-title {
+    opacity: 0 !important;
+    transform: translateY(-20px) !important;
+    transition: opacity 0.4s ease, transform 0.4s ease !important;
+    pointer-events: none;
+}
+
+.cert-fade-out .certification-card {
+    opacity: 0 !important;
+    transform: translateX(-50px) !important;
+    transition: opacity 0.5s ease, transform 0.5s ease !important;
+    pointer-events: none;
+}
+
+/* Specific styling for certification card images during fade */
+.cert-fade-out .cert-image-container img {
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    pointer-events: none;
+}
+
+/* Restore certification card images during fade-in */
+#certifications.active .cert-image-container img {
+    opacity: 1;
+    transition: opacity 0.8s ease 0.5s;
+}
+
+#certifications.active .subsection-title,
+#certifications.active .certification-card {
+    opacity: 1;
+    transform: translate(0);
+    transition: opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s;
+}
+
+/* Add staggered delay for each card if there are multiple */
+#certifications.active .certification-card:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+#certifications.active .certification-card:nth-child(3) {
+    transition-delay: 0.5s;
+}
